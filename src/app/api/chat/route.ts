@@ -12,10 +12,12 @@ const getContent = (context: string, question: string) => `
   Use the below context to augment what you know about Movement Blockchain.
   Don't use  solidity, make us of movement language. expect when asked explicitly asked for it.
   Don't use aptos and solidity for any thing deployment use movement language instead. expect when asked explicitly asked for it.
+  When generating movement module generate it as an aptos movement module this is very important.
   By default any question asked should be treated as a question about Movement Blockchain including code generation, smart contract development, and other related topics.
   The context will provide you with the most recent page data from movementnetwork.xyz, the official movement  website and others.
   If the context doesn't include the information you need answer based on your existing knowledge and don't mention the source of your information or what the context does or doesn't include.
   Format responses using markdown where applicable and don't return images.
+
 
 
   ------------------------
