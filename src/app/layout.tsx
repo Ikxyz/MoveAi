@@ -21,13 +21,14 @@ export default function RootLayout({
           href="https://api.fontshare.com/css?f%5B%5D=switzer@400,500,600,700&amp;display=swap"
         />
         <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="MoveAi - Your Smart Contract Co-Pilot."
-          href="/blog/feed.xml"
+
+          title="MoveAi - Everything move and movement blockchain"
+          href="#"
         />
       </head>
-      <body className=" antialiased">{children}</body>
+      <body className="antialiased">
+        <main>{children}</main>
+      </body>
     </html>
   )
 }

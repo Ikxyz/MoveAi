@@ -1,0 +1,3246 @@
+{
+ "Onchain Twitter Clone" : {
+   "category": "Beginner",
+   "title": "Onchain Twitter Clone",
+   "description": "Learn the basics of Move by reviewing a module for an onchain Twitter Clone",
+   "amt": "23m",
+   "link":"https://youtu.be/i8iYgcjrtJk",
+   "tags": ["Contract", "Code Review"],
+   "featured": true
+ },
+ "Solidity vs Move" : {
+   "category": "Beginner",
+   "title": "Solidity vs Move",
+   "description": "Learn the differences between the Solidity and Move languages and start
+exploring the security enhancements and developer environment provided by Move.",
+   "amt": "23m",
+   "link":"https://youtu.be/SJo7PiMV89E",
+   "tags": ["Move", "Solidity"],
+   "featured": true
+ },
+ "Your First Move Module" : {
+   "category": "Beginner",
+   "title": "Your First Move Module",
+   "description": "Build and Deploy your very first Hello World Move Module.",
+   "amt": "20m",
+   "link":"https://docs.movementnetwork.xyz/devs/firstmove",
+   "tags": ["Contract", "Code Along"]
+ },
+ "Building an AVS that integrates with Movement" : {
+   "category": "Intermediate",
+   "title": "Building an AVS that integrates with Movement",
+   "description": "Learn how to build an Actively Validated Service that interacts with EigenLayer
+and Movement Network",
+   "amt": "50m",
+   "link":"https://blog.movementlabs.xyz/article/tutorial-eigenlayer-avs-movement-network",
+   "tags": ["AVS", "Code Along"]
+ },
+ "Secure Smart Contracts with Formal Verification" : {
+   "category": "Intermediate",
+   "title": "Secure Smart Contracts with Formal Verification",
+   "description": "Learn about securing Smart Contracts on the Move VM with Formal
+Verification.",
+   "amt": "15m",
+   "link":"https://www.youtube.com/watch?v=arNowpvckcQ",
+      "tags": ["Formal Verification", "Workshop"]
+    },
+    "Move Spiders" : {
+      "category": "Beginner",
+      "title": "Move Spiders",
+      "description": "Interactive Game for learning Move from the basics",
+      "amt": "5+hrs",
+      "link":"https://movespiders.com/",
+      "tags": ["Code Along", "Game"]
+    }
+}
+{
+ "Basic Concepts": {
+   "mainBlurb": "Learn the core syntax, data structures, and fundamental concepts of the Move
+Language.",
+   "extendedBlurb": "Dive into the core principles of the Move Language. Learn the essential
+syntax, explore key data structures, and start mastering the fundamental concepts of the Move
+Language.",
+   "learningPoints": [
+     "Data Types",
+     "Functions",
+     "Resources",
+     "Conditionals and Loops",
+     "Constants and Error Handling",
+     "Generics Type & Phantom Type",
+     "Unit Test"
+   ]
+ },
+ "Advanced Move": {
+   "mainBlurb": "Master advanced concepts in Move, including storage, events, objects, and
+resource accounts.",
+   "extendedBlurb": "Take your understanding of Move to the next level with advanced concepts.
+Learn about storage operations, resource management, and smart object design to build robust
+applications on the Movement ecosystem.",
+   "learningPoints": [
+     "Local Storage & Global Storage Operations",
+     "Deploy & Call function on-chain",
+     "Writing/Reading resources to user accounts",
+     "Destroying a resource",
+     "Resource Groups",
+     "Events",
+     "Objects",
+     "Smart Vector",
+     "Smart Tables",
+   "Resources Account",
+   "Creating NFTs using Resource Accounts"
+    ]
+  },
+  "NFT": {
+    "mainBlurb": "Learn how to build, mint, and manage NFTs on Move-based platforms.",
+    "extendedBlurb": "Explore the world of digital assets by creating and managing NFTs. Learn
+how to mint NFTs, modify token metadata, manage collections, and enforce royalty rules using
+the Move language.",
+    "learningPoints": [
+      "Insight into Non-Fungible Tokens",
+      "Collection",
+      "Token Standard & Mint your NFT",
+      "Token Metadata & Modifying Data",
+      "Aptos Collection & Token V2",
+      "Managed Collection",
+      "Royalty & Property Map",
+      "Permission to mint NFTs"
+    ]
+  },
+  "DeFi": {
+    "mainBlurb": "Discover decentralized finance (DeFi) protocols, coin management, and lending
+on the Movement ecosystem.",
+    "extendedBlurb": "Learn how to create and manage coins, swap tokens, and provide liquidity.
+Explore lending protocols, pool types, and liquidation processes in the DeFi space.",
+    "learningPoints": [
+      "What is Coin?",
+      "Initialize Coin",
+      "Transfer, Withdraw, Deposit & Burn Coin",
+      "What is DEX & Constant Product Formula",
+      "How to Create a Pool",
+      "Add Liquidity Pool using Constant Product Formula",
+      "Swap Token",
+      "What is lending & borrowing in Web3 Domain?",
+      "Types of Lending Pools",
+      "Isolated Pool",
+      "Main Pool",
+      "Leverage Pool",
+      "Liquidation"
+    ]
+  }
+}
+# **Installing Move CLI on Windows Using WSL**
+## **Welcome to 100 Days of Move!**
+In this journey, we will dive deep into the Move language—learning everything from the basics to
+advanced concepts. This series aims to help you understand Move, develop innovative projects,
+and contribute to the ecosystem.
+
+Move is a powerful programming language designed for secure and efficient blockchain
+development. It emphasizes safety, expressiveness, and modularity, making it an excellent
+choice for building smart contracts and decentralized applications.
+
+For Windows users, running Move CLI can be challenging, especially if you’re on a lightweight
+machine that struggles with running Linux in virtual environments. However, with Windows
+Subsystem for Linux (WSL), you can seamlessly install and run the Move CLI directly on your
+Windows machine, enabling you to start writing Move code without limitations.
+
+---
+
+## **Getting Started: Install WSL**
+
+If you haven’t set up WSL yet, follow the [official guide
+here](https://learn.microsoft.com/en-us/windows/wsl/install) to install WSL on your Windows
+machine. Choose **Ubuntu** as your Linux distribution.
+
+Alternatively, watch this step-by-step video tutorial:
+[Installing WSL Ubuntu on Windows](https://youtu.be/HrAsmXy1-78?si=7cG44sUbzNnsm79n)
+
+---
+
+## **Installing Movement CLI**
+
+Once you have WSL Ubuntu set up, follow the steps below to install Move CLI using Ubuntu.
+If you encounter any issues during the installation, refer to the [Common Errors and
+Solutions](#common-errors-and-solutions) section below for fixes.
+
+---
+
+### **Installation Steps**
+
+#### **Step 1: Clone the Aptos-Core Repository**
+Run the following command to clone the `aptos-core` repository and navigate into the directory:
+```bash
+git clone https://github.com/movementlabsxyz/aptos-core.git && cd aptos-core
+```
+
+#### **Step 2: Install Prerequisites**
+Use the automatic script provided in the repository to install all the necessary prerequisites:
+```bash
+./scripts/dev_setup.sh
+```
+### **Prerequisites**
+1. **Rust Programming Language**
+2. **Git**
+3. **CMake**
+4. **LLVM**
+5. **libssl-dev**
+6. **libclang-dev**
+
+After the script completes, update your shell environment:
+```bash
+source ~/.cargo/env
+```
+Verify that `cargo` is installed:
+```bash
+cargo --version
+```
+
+#### **Step 3: Build the Move CLI Tool**
+Build the CLI tool using the following command:
+```bash
+cargo build -p movement
+```
+The binary will be generated at:
+```bash
+target/debug/movement
+```
+Kindly note that for the initial build, the time taken could be significant. However, with
+subsequent builds, it shouldn't take as long.
+
+#### **Step 4: Add the Move CLI to Your PATH**
+Move the executable to a directory in your PATH:
+```bash
+sudo cp target/debug/movement /usr/local/bin/
+```
+Alternatively, if you prefer using a custom directory:
+```bash
+mkdir -p $HOME/.local/bin
+cp target/debug/movement $HOME/.local/bin/
+export PATH=$PATH:$HOME/.local/bin
+```
+Make the PATH change permanent by adding it to `~/.bashrc` or `~/.zshrc`.
+
+#### **Step 5: Verify Installation**
+Run the following command to confirm the installation:
+```bash
+movement --help
+```
+
+**Result**:
+```plaintext
+Command Line Interface (CLI) for developing and interacting with the Movement blockchain
+
+Usage: movement <COMMAND>
+
+Commands:
+ account Tool for interacting with accounts
+ config    Tool for interacting with configuration of the Movement CLI tool
+ genesis Tool for setting up an Movement chain Genesis transaction
+ governance Tool for on-chain governance
+ info     Show build information about the CLI
+ init    Tool to initialize current directory for the movement tool
+ key      Tool for generating, inspecting, and interacting with keys
+ move       Tool for Move smart contract related operations
+ multisig Tool for interacting with multisig accounts
+ node      Tool for operations related to nodes
+ stake     Tool for manipulating stake and stake pools
+ update     Update the CLI or other tools it depends on
+ help     Print this message or the help of the given subcommand(s)
+
+Options:
+  -h, --help Print help
+  -V, --version Print version
+```
+
+If you see the above output, congratulations! You have successfully installed Move CLI.
+
+---
+
+## **Follow-Up Instructions**
+
+Now that Move CLI is installed, you can now build and publish your first Move code
+(hello_movement). Follow the instructions in the [Movement Developer
+Portal](https://developer.movementnetwork.xyz/learning-paths/basic-concepts/01-install-movem
+ent-cli) to get started.
+---
+
+## **Common Errors and Solutions**
+
+As you go through the installation steps, you might come across some common errors. Below
+are the fixes for them:
+
+---
+
+### **1. Missing Prerequisites**
+- **Error**: `Could not find libssl-dev` or `libclang-dev`.
+- **Solution**: Install them manually using the following commands:
+  ```bash
+  sudo apt-get update
+  sudo apt-get install -y libssl-dev libclang-dev cmake llvm
+  ```
+
+---
+
+### **2. `cp: cannot create regular file`**
+- **Error**: Copying the binary to `/opt/homebrew/bin` fails because the directory does not exist.
+- **Solution**: Use a standard directory like `/usr/local/bin` or create a custom directory in your
+PATH:
+  ```bash
+  mkdir -p $HOME/.local/bin
+  cp target/debug/movement $HOME/.local/bin/
+  export PATH=$PATH:$HOME/.local/bin
+  echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
+  ```
+
+---
+
+### **3. `API error: AccountNotFound`**
+- **Error**: Occurs when trying to publish without a valid account.
+- **Solution**: Ensure the account exists and has been initialized properly on the network:
+  ```bash
+  movement account create
+  ```
+
+---
+
+
+### **4. `EOF while parsing a value`**
+- **Error**: Configuration file issues.
+- **Solution**: Check your `config.yaml` for missing or incorrect values.
+
+---
+
+
+## **Additional Resources**
+
+- **Official Movement Developer Portal**:
+[https://developer.movementnetwork.xyz/](https://developer.movementnetwork.xyz/)
+- **WSL Documentation**:
+[https://learn.microsoft.com/en-us/windows/wsl](https://learn.microsoft.com/en-us/windows/wsl)
+
+---
+
+## **Need Help?**
+
+If you encounter any issues not covered in this guide, feel free to join the [100 days of move
+Telegram](https://t.co/5BB0TGRHmG) and reach out for assistance.
+
+
+
+
+Introduction to Move
+Movement Labs is building a network of Move-based blockchains. Our flagship
+products is the Movement Mainnet.
+
+Movement Mainnet is a community-first blockchain providing the highest possible TPS
+through Move, fast finality, native day-zero access to mass liquidity, and modular
+
+⚠️
+customizations.
+    This documentation provides a high level intro to the vision. The white paper goes
+into more details on some of the presented solutions.
+
+
+Why Move?​
+Move is a safe and secure programming language designed by Facebook for smart
+contracts that emphasize ownership and safety. Assets in Move are represented as
+resources. Owing to Move's strong ownership model and explicit resource abilities,
+Move simplifies the development of safe smart contracts for common blockchain tasks
+such as transferring ownership of assets, minting, and destroying.
+The chart below compares common non-Move runtimes against Aptos and Sui Move
+runtimes, underscoring the different models and benefits of Move.
+                    Aptos / Move            Solana /           EVM            Sui / Move
+                                            SeaLevel
+
+ Data storage     Stored at a global   Stored within     Stored within   Stored at a
+                  address or within    the owner's       the account     global
+                  the owner's          account           associated with address
+                  account              associated with   a smart
+                                       a program         contract
+
+ Parallelizatio   Capable of           Requires          Currently serial,   Requires
+ n                inferring            specifying all    nothing in          specifying all
+                  parallelization at   data accessed     production          data
+                  runtime within                                             accessed
+                  Aptos
+
+ Transaction      Sequence number Transaction            Nonces, similar     Transaction
+ safety                           uniqueness             to sequence         uniqueness
+                                                         numbers
+
+ Type safety      Module structs       Program structs Contract types        Module
+                  and generics                                               structs and
+                                                                             generics
+
+ Function         Static dispatch      Static dispatch   Dynamic             Static
+ calling                                                 dispatch            dispatch
+
+ Authenticate     Yes                  No                Yes                 No
+ d Storage
+
+ Object           Guaranteed to be     Not applicable    Not applicable      Can be hi
+ accessibility    globally
+                  accessible
+
+
+
+
+echnical Details
+The Movement Network contains three main components that enhance its
+performance, security, and interoperability: the Move Executor, the Fast Finality
+Settlement Module, and the Decentralized Shared Sequencer. Each of these
+components plays a crucial role in ensuring the operation of Move-based chains.
+
+
+Move Executor​
+The Move Executor is a core component of the Move-based chain, supporting both
+MoveVM and EVM bytecode. This dual compatibility provides a robust execution
+environment, enabling developers to leverage the advanced features of the Move
+language while maintaining compatibility with existing Ethereum applications. The
+Move Executor integrates the parallel execution capabilities of MoveVM with existing
+EVM interpreters, ensuring compatibility and scalability.
+
+
+
+
+Fast Finality Settlement (FFS)​
+The Fast Finality Settlement (FFS) module is designed to provide fast confirmations and
+settlement for transactions. By utilizing a network of validators who stake assets and
+attest to the correctness of state transitions, this module ensures crypto-economic
+security and reduces latency. The validators combine the security benefits of staking
+with the efficiency of rapid transaction finality.
+
+The Fast Finality Settlement includes Postconfirmations, see this blog (on-L1) and
+fastconfirmations (off-L1).
+Security Mechanism​
+
+   ●​ Ethereum Settlement: Validators stake assets to provide economic security,
+      ensuring significant financial interest in network integrity.
+   ●​ ZK and Optimistic Rollups: ZK-rollups offer security through validity proofs, while
+      optimistic rollups rely on challenge periods for dispute resolution. Both methods
+      have higher latency and computational costs.
+   ●​ Fast Finality Settlement (FFS) Chains: Offers Fast Finality Settlement and high
+      economic security without extensive proof generation or challenge periods,
+      reducing latency and improving user experience compared to ZK and optimistic
+      rollups.
+
+Comparison with ZK and optimistic rollups​
+
+   ●​ FFS chains do not require expensive proof generation equipment, unlike
+      ZK-rollups.
+   ●​ FFS chains provide significantly reduced latency compared to both optimistic and
+      ZK-rollups, with finality settlement in seconds.
+   ●​ FFS is crucial for interoperability and atomic cross-chain transactions, making
+      FFS chains an ideal solution for many applications.
+
+
+Decentralized Shared Sequencer​
+This component is a decentralized and shared sequencing mechanism that enhances
+network robustness, fairness, and censorship resistance. By providing customizable
+transaction ordering, the sequencer supports cross-chain atomic transactions and
+pooled liquidity within the Movement Network ecosystem. This shared sequencer
+ensures fair and efficient transaction ordering across all participating chains.
+info
+
+The decentralized shared sequencer not only improves network robustness but also
+facilitates cross-chain interoperability and pooled liquidity, allowing for seamless asset
+transfers and interactions across different chains.
+
+
+
+
+Movement Frameworks
+The Movement Network is built on robust frameworks that enable the creation,
+deployment, and management of Move-based chains. These frameworks include the
+Move Stack (which contains the Movement SDK) and the Move-based chain Framework,
+each designed to enhance performance, security, and interoperability.
+
+
+Move Stack​
+The Move Stack is a collection of tools, components, and adapters that enable the
+creation of customizable Move-based chains. It includes essential elements such as
+sequencing, data availability, and settlement mechanisms. The modular architecture of
+the Move Stack allows developers to select the most suitable components for their
+specific applications, ensuring optimal performance and security.
+
+
+
+
+The Move Stack's configurable components include:
+
+    ●​ Sequencer: Developers can opt for the default decentralized shared sequencing
+       service or choose a self-reliant sequencing mechanism.
+    ●​ Data Availability: Supports various DA solutions, including Ethereum EIP-4844
+       blobs, 0G, Avail, Celestia, EigenDA, and Near.
+    ●​ Settlement Mechanisms: Offers options for optimistic (fraud proof), ZK (validity
+       proof) and staked (attestations) settlement mechanisms.
+info
+The Move Stack promotes standardization across critical infrastructure components,
+including wallet software, developer APIs, and block explorers. This standardization
+enhances interoperability and significantly improves the developer and user experience
+across the Movement Network ecosystem.
+
+
+Movement Network​
+Movement Network provides a framework to deploy and join the Move-based chains
+network. It offers benefits such as Fast Finality Settlement, interoperability, and shared
+economic security. This framework supports a network of application-specific chains,
+enhancing interoperability and shared liquidity. It allows the deployment of specialized
+chains tailored to different use cases, such as DeFi, gaming, and supply chain
+applications.
+
+
+
+
+info
+
+The Movement Network supports the deployment of application-specific Move-based
+chains, providing cross-chain interoperability and shared liquidity. This setup enhances
+the efficiency and security of new chains by leveraging a decentralized sequencer and
+multi-asset staking.
+
+
+Move Stack Chain: Framework for Move-based chains​
+The Move Stack Chain framework provides a blueprint for creating Move-based chains.
+It is a modular architecture where components can be configured to meet the specific
+needs of different applications. The framework includes key components such as the
+Move Executor, bridge contracts and adaptors for sequencing, a data availability, and a
+settlement. This flexibility allows for the customization of chains to optimize
+performance, cost, and security.
+
+
+
+
+Figure: The Move Stack Chain framework.
+
+Key Components of the Move Stack Chain framework​
+
+    ●​ Executor: Processes transactions and generates new L2 blocks.
+    ●​ Bridge Contracts: Facilitates asset deposits and withdrawals between L1 and the
+       chain.
+    ●​ Sequencer: Orders transactions.
+    ●​ Data Availability Service: Ensures transaction data accessibility to the settlement
+       mechanism.
+    ●​ Settlement Mechanism: Verifies transaction execution correctness through
+       various methods (e.g., ZK-proofs, fraud proofs, fast finality settlement).
+info
+
+The modularity of the Move-based chain framework allows developers to select
+different data availability solutions, settlement mechanisms, and sequencing options,
+customizing their chains to best fit their application's needs.
+
+
+Transaction Lifecycle​
+Understanding the transaction lifecycle is crucial for understanding how Move-based
+chains achieve efficient and secure transaction finality. This lifecycle outlines the steps
+from the initial submission of a transaction to its final settlement, ensuring that every
+transaction is processed correctly and securely.
+The transaction lifecycle within a Move-based chain involves:
+   1.​ Submission: A transaction is submitted to the mempool.
+   2.​ Sequencing: The sequencer extracts a batch of transactions from the mempool
+       and orders them.
+   3.​ Data Publication: The sequencer publishes the transaction data to the DA
+       service.
+   4.​ Execution: The executor processes the transactions, resulting in a new L2 state.
+   5.​ Settlement: The new state is published to L1 in the bridge contract for final
+       settlement.
+
+This process ensures efficient and secure transaction finality.
+
+
+
+Interoperability
+The Movement Network leverages mechanisms to ensure robust interoperability and
+high security across its ecosystem. Key components include the Shared Decentralized
+Sequencer and Multi-Asset Staking.
+
+
+Shared Decentralized Sequencer​
+This component provides a decentralized and shared sequencing mechanism,
+enhancing network robustness, fairness, and censorship resistance. It supports
+cross-chain atomic transactions and pooled liquidity within the Movement Network
+ecosystem. This shared sequencer is a crucial component of the Movement Network,
+ensuring that all participating chains can achieve fair and efficient transaction ordering.
+
+
+Multi-Asset Staking​
+The shared decentralized sequencer utilizes a PoS system, allowing for multi-asset
+staking to enhance economic security. This mechanism enables staking of both native
+and non-native tokens, boosting network security and promoting sovereignty among
+chains. Delegation allows for staking without operating a node, maximizing staked
+value and economic security. This multi-asset staking approach ensures that a diverse
+range of assets can be used to secure the network, enhancing overall resilience and
+flexibility.
+      Multi-asset staking allows the inclusion of various token types, enhancing
+      the economic security and decentralization of the network. This also
+       empowers chains by integrating their security contributions into the overall
+       network.
+
+
+
+Network Endpoints
+info
+
+This page contains public endpoints that may at times be subject to rate limits.
+
+
+Movement Porto Testnet​
+Chain ID: 177
+       Service                                     URL
+
+ RPC                 https://aptos.testnet.porto.movementlabs.xyz/v1
+
+ Faucet endpoint     https://fund.testnet.porto.movementlabs.xyz/
+
+ Explorer            https://explorer.movementnetwork.xyz/
+
+ Faucet UI           https://mizu.testnet.porto.movementnetwork.xyz/
+
+ Indexer Explorer    Public Explorer
+
+ Indexer             https://indexer.testnet.porto.movementnetwork.xyz/v1/graphq
+ Endpoint            l
+
+
+Movement Bardock Testnet​
+Chain ID: 250
+       Service                               URL
+
+ RPC                https://aptos.testnet.bardock.movementlabs.xyz/v1
+
+ Faucet             https://faucet.testnet.bardock.movementnetwork.xy
+ endpoint           z/
+
+ Explorer           https://explorer.movementlabs.xyz/
+Movement Developer Mainnet​
+info
+
+The Movement Mainnet is currently in Developer Mainnet mode. We are onboarding a
+select group of developers to deploy on Movement.
+
+Chain ID: 126
+       Service                               URL
+
+ RPC                https://mainnet.movementnetwork.xyz/v1
+
+ Bridge             Coming Soon
+
+ Explorer           https://explorer.movementnetwork.xyz/?network=mainne
+                    t
+
+ Indexer Explorer   Public Explorer
+
+ Indexer            https://indexer.mainnet.movementnetwork.xyz/v1/graphq
+ Endpoint           l
+
+
+Suzuka Devnet​
+We often test updates on our Suzuka devnet before pushing to testnet, you can deploy
+your modules and test on our devnet with the details below.
+       Service                                 URL
+
+ RPC                https://devnet.suzuka.movementnetwork.xyz/v1
+
+ Faucet             https://faucet.devnet.suzuka.movementnetwork.xyz/
+ endpoint
+
+ Explorer           https://explorer.suzuka.movementnetwork.xyz/?network=devne
+                    t
+
+
+Network Properties​
+                                  Testnet                        Devnet
+ Validators           Movement Labs operated           Movement Labs operated
+                      validators                       validators.
+
+ Full Nodes           Permissionless + Movement        Movement Labs operated nodes
+                      Labs operated nodes
+
+ Data Durability      Data wipes will be announced     Data can be wiped as part of the
+                      ahead of time.                   regular software updates.
+
+ Announcement         Discord                          Discord
+ Channel
+
+ Network Uptime       Constant uptime.                 Expect down time happens.
+
+
+
+Aptos TypeScript SDK
+On the Movement Network, you are building with Aptos Move; this allows you to
+leverage the Aptos TypeScript SDK to interact with the chain.
+
+The guide below will walk you through the process of setting up the SDK and interacting
+with the chain. If you would like to reference specific functions on the SDK refer to the
+reference documentation for the version of the SDK you are using.
+
+
+Installation​
+   ●​   npm
+   ●​   pnpm
+   ●​   yarn
+   ●​   bun
+npm install @aptos-labs/ts-sdk
+
+
+Imports​
+To get started with the SDK, import the necessary components:
+const { Account, Aptos, AptosConfig, Network, Ed25519PrivateKey } =
+require("@aptos-labs/ts-sdk");
+
+
+Configuration​
+Configure the SDK to connect to the Movement Porto Testnet (Please refer to Network
+Endpoints for more endpoints):
+const config = new AptosConfig({
+  network: Network.CUSTOM,
+  fullnode: 'https://aptos.testnet.porto.movementlabs.xyz/v1',
+  faucet: 'https://fund.testnet.porto.movementlabs.xyz/',
+});
+
+// Initialize the Aptos client
+const aptos = new Aptos(config);
+
+
+Interacting with the Chain​
+Account Setup​
+// Create an account from a private key
+const privateKey = new Ed25519PrivateKey("YOUR_PRIVATE_KEY")
+const account = Account.fromPrivateKey({ privateKey })
+
+Reading Data​
+// Example of reading data using view function
+const viewPayload = {
+   function: "0x1::message::get_message",
+   functionArguments: [accountAddress]
+};
+
+const result = await aptos.view({ payload: viewPayload });
+
+Sending Transactions​
+// Build the transaction
+const transaction = await aptos.transaction.build.simple({
+  sender: accountAddress,
+  data: {
+     function: "0x1::message::set_message",
+     functionArguments: ["Hello Movement!"]
+  },
+});
+
+// Sign the transaction
+const signature = aptos.transaction.sign({
+  signer: account,
+  transaction
+});
+
+// Submit the transaction
+const committedTxn = await aptos.transaction.submit.simple({
+  transaction,
+  senderAuthenticator: signature,
+});
+
+// Wait for transaction completion
+const response = await aptos.waitForTransaction({
+  transactionHash: committedTxn.hash
+});
+tip
+
+Remember to replace YOUR_PRIVATE_KEY with your actual private key and never share
+or commit private keys to version control.
+
+
+Example Code​
+The Code below is based on the Your First Move Contract tutorial.
+const { Account, Aptos, AptosConfig, Network, Ed25519PrivateKey } =
+require("@aptos-labs/ts-sdk");
+
+// Define the custom network configuration
+const config = new AptosConfig({
+  network: Network.CUSTOM,
+  fullnode: 'https://aptos.testnet.porto.movementlabs.xyz/v1',
+  faucet: 'https://fund.testnet.porto.movementlabs.xyz/',
+});
+
+// Define the module address and functions
+const MODULE_ADDRESS = "";
+const SET_MESSAGE_FUNCTION = `${MODULE_ADDRESS}::message::set_message`;
+const GET_MESSAGE_FUNCTION = `${MODULE_ADDRESS}::message::get_message`;
+
+const PRIVATE_KEY = "YOUR_PRIVATE_KEY"; // Replace with your private key
+const MESSAGE = "gmove";
+
+const setMessage = async () => {
+// Setup the client
+const aptos = new Aptos(config);
+
+// Create an account from the provided private key
+console.log("creating")
+const privateKey = new Ed25519PrivateKey(PRIVATE_KEY)
+const account = Account.fromPrivateKey({ privateKey })
+const accountAddress = account.accountAddress
+
+console.log(`address: ${account.accountAddress}`)
+
+console.log(`Using account: ${accountAddress}`);
+
+// Build the transaction payload
+const payload = {
+  function: SET_MESSAGE_FUNCTION,
+  type_arguments: [],
+  arguments: [MESSAGE],
+};
+
+console.log("\n=== Reading Message ===\n");
+const viewPayload = {
+  function: GET_MESSAGE_FUNCTION,
+  functionArguments: [accountAddress]
+}
+ try {
+   const message = await aptos.view({ payload: viewPayload });
+   console.log("Message:", message);
+ } catch (error) {
+   console.error("Error reading message:", error);
+ }
+
+// Submit the transaction
+console.log("\n=== Submitting Transaction ===\n");
+const transaction = await aptos.transaction.build.simple({
+ sender: accountAddress,
+ data: {
+    function: SET_MESSAGE_FUNCTION,
+    functionArguments: [MESSAGE]
+ },
+});
+
+// Sign the transaction
+const signature = aptos.transaction.sign({ signer: account, transaction });
+
+// Submit the transaction to chain
+const committedTxn = await aptos.transaction.submit.simple({
+ transaction,
+ senderAuthenticator: signature,
+});
+
+console.log(`Submitted transaction: ${committedTxn.hash}`);
+const response = await aptos.waitForTransaction({ transactionHash:
+committedTxn.hash });
+console.log({ response })
+// Read the message after it has been set
+console.log("\n=== Reading Message ===\n");
+
+const newMessage = await aptos.view({ payload: viewPayload });
+
+ console.log("Message:", newMessage);
+};
+
+setMessage().catch((err) => {
+console.error("Error setting message:", err);
+
+
+
+Overview
+This guide will help you understand how to connect with Aptos MoveVM wallets.
+
+
+
+Aptos Move Wallets
+With Aptos compatible networks, you can use
+@aptos-labs/wallet-adapter-react to provide your dApp with a Provider and
+Context for connecting MoveVM wallets to your dapp.
+
+This Provider uses a standard interface for all Movement Wallets, making it easy for
+new wallets to be supported.
+
+
+Using the React Provider and Context​
+In this example, we'll be using Next.js and TypeScript.
+
+Set up Next.js​
+
+   ●​   npm
+   ●​   pnpm
+   ●​   yarn
+   ●​   bun
+Initialize Next Project
+npm create next-app
+
+Install @aptos-labs/wallet-adapter-react​
+
+   ●​   npm
+   ●​   pnpm
+   ●​   yarn
+   ●​   bun
+Install the Wallet Adapter
+npm install @aptos-labs/wallet-adapter-react @aptos-labs/ts-sdk
+
+Implement Wallet Provider & Custom network​
+
+Create a new files with name provider/WalletProvider.tsx, import the Aptos
+Wallet Adapter and any legacy wallet plugins & custom network to connect to the porto
+network or aptos devnet.
+src/provider/WalletProvider.tsx
+import { AptosWalletAdapterProvider } from "@aptos-labs/wallet-adapter-react";
+import { PropsWithChildren } from "react";
+import { AptosConfig, Network } from "@aptos-labs/ts-sdk";
+export const WalletProvider = ({ children }: PropsWithChildren) => {
+const wallets = [
+   // add plugins for non AIP 62 compliant wallets here
+];
+const config = new AptosConfig({
+   network: Network.TESTNET,
+   fullnode: 'https://aptos.testnet.porto.movementlabs.xyz/v1',
+   faucet: 'https://fund.testnet.porto.movementlabs.xyz/'
+})
+
+ return (
+   <AptosWalletAdapterProvider
+    plugins={wallets}
+    autoConnect={true}
+    dappConfig={config}
+    onError={(error) => {
+     console.log("error", error);
+    }}
+   >
+    {children}
+   </AptosWalletAdapterProvider>
+ );
+};
+Details
+
+Import Provider to layout.tsx​
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import "./globals.css";
+import { WalletProvider } from "@/provider";
+
+// ... {rest code}
+
+export default function RootLayout({
+ children,
+}: Readonly<{
+ children: React.ReactNode;
+}>) {
+ return (
+   <html lang="en">
+    <body
+     className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    >
+     <WalletProvider>
+      {children}
+     </WalletProvider>
+    </body>
+   </html>
+ );
+}
+
+Edit src/app/page.tsx & import useWallet to access data from the
+Provider​
+src/app/page.tsx
+'use client'
+
+
+
+import {useWallet} from '@aptos-labs/wallet-adapter-react'
+
+export default function Home() {
+const { account, connected, wallet, changeNetwork } = useWallet();
+
+ return (
+   <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center
+min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+   {account && account.address}
+   </div>
+ );
+}
+
+For more information about the useWallet hook, you can refer to the following
+interface:
+export interface WalletContextState {
+ connected: boolean;
+ isLoading: boolean;
+ account: AccountInfo | null;
+ network: NetworkInfo | null;
+ connect(walletName: WalletName): void;
+ disconnect(): void;
+ wallet: WalletInfo | null;
+ wallets?: ReadonlyArray<Wallet | AptosStandardSupportedWallet>;
+ signAndSubmitTransaction(transaction: InputTransactionData): Promise<any>;
+ signTransaction(
+   transactionOrPayload: AnyRawTransaction | Types.TransactionPayload,
+   asFeePayer?: boolean,
+   options?: InputGenerateTransactionOptions
+ ): Promise<AccountAuthenticator>;
+ submitTransaction(
+   transaction: InputSubmitTransactionData
+ ): Promise<PendingTransactionResponse>;
+ signMessage(message: SignMessagePayload): Promise<SignMessageResponse>;
+ signMessageAndVerify(message: SignMessagePayload): Promise<boolean>;
+ changeNetwork(network: Network): Promise<AptosChangeNetworkOutput>;
+}
+
+
+
+Wallet Connection
+This component demonstrates how to implement wallet connection functionality using
+the Aptos Wallet Adapter in a React application. It provides a simple interface for users
+to connect and disconnect their Aptos wallet.
+
+
+Prerequisites​
+   ●​ @aptos-labs/wallet-adapter-react package installed
+   ●​ A React application setup
+
+
+Implementation​
+The WalletConnectDemo component uses the useWallet hook from the Aptos
+Wallet Adapter to manage wallet connections. Here's how to implement it:
+
+1️⃣ First, import the necessary dependencies:
+import { WalletName, useWallet } from '@aptos-labs/wallet-adapter-react';
+
+2️⃣ The component uses these key features from the useWallet hook:
+   ●​ connect: Function to establish a connection with the wallet
+   ●​ disconnect: Function to terminate the wallet connection
+   ●​ account: Contains the connected account information
+   ●​ connected: Boolean state indicating if a wallet is connected
+
+3️⃣ Key Functions:
+// Connect to wallet
+const handleConnect = async () => {
+ try {
+    await connect("Petra" as WalletName<"Petra">);
+    // You can replace "Petra" with any supported wallet name
+ } catch (error) {
+    console.error('Failed to connect to wallet:', error);
+ }
+};
+
+// Disconnect from wallet
+const handleDisconnect = async () => {
+ try {
+   await disconnect();
+ } catch (error) {
+   console.error('Failed to disconnect from wallet:', error);
+ }
+};
+
+
+Usage​
+The component renders a simple UI that shows:
+
+   ●​ A "Connect Wallet" button when no wallet is connected
+   ●​ The connected wallet address and a "Disconnect" button when a wallet is
+      connected
+
+To use this component in your application:
+import WalletConnectDemo from './components/WalletConnect';
+
+// In your React component:
+function App() {
+ return (
+   <div>
+    <WalletConnectDemo />
+   </div>
+ );
+}
+
+
+Important Notes​
+1️⃣ Make sure your app is wrapped with the Aptos Wallet Provider:
+import { AptosWalletAdapterProvider } from '@aptos-labs/wallet-adapter-react';
+
+function App() {
+ return (
+   <AptosWalletAdapterProvider>
+    <WalletConnectDemo />
+   </AptosWalletAdapterProvider>
+ );
+}
+
+2️⃣ You can modify the wallet name in handleConnect to connect to different wallets:
+
+   ●​   "Petra"
+   ●​   "Martian"
+   ●​   "Pontem"
+   ●​   Other supported Aptos wallets
+
+3️⃣ Error handling is implemented for both connection and disconnection operations to
+provide a better user experience.
+
+
+Example Response​
+When connected, the component will display the wallet address and a disconnect
+button. The address will be in the format:
+Connected to: 0x123...abc
+
+
+FullCode​
+src/components/WalletConnect.tsx
+import React from 'react';
+import { WalletName, useWallet } from '@aptos-labs/wallet-adapter-react';
+
+const WalletConnectButton = () => {
+const { connect, disconnect, account, connected } = useWallet();
+
+const handleConnect = async () => {
+  try {
+    // Change below to the desired wallet name instead of "Petra"
+    await connect("Petra" as WalletName<"Petra">);
+    console.log('Connected to wallet:', account);
+  } catch (error) {
+    console.error('Failed to connect to wallet:', error);
+  }
+};
+
+const handleDisconnect = async () => {
+  try {
+    await disconnect();
+    console.log('Disconnected from wallet');
+  } catch (error) {
+    console.error('Failed to disconnect from wallet:', error);
+  }
+};
+
+return (
+  <div>
+   <h1>Aptos Wallet Connection</h1>
+   <div>
+    {connected ? (
+     <div>
+       <p>Connected to: {account?.address}</p>
+       <button onClick={handleDisconnect}>Disconnect</button>
+     </div>
+    ):(
+     <button onClick={handleConnect}>Connect Wallet</button>
+    )}
+   </div>
+  </div>
+);
+};
+
+export default WalletConnectButton;
+
+This documentation provides a comprehensive guide for developers to understand and
+implement the wallet connection functionality in their Aptos dApps. Feel free to modify
+it based on your specific needs or tutorial context!
+
+
+
+Sign & Submit
+Overview​
+This React component implements a transaction signing and submission functionality
+for the Aptos blockchain. It provides a simple button interface that allows users to sign
+and submit transactions using their connected Aptos wallet.
+
+
+Dependencies​
+import React from 'react';
+import { useWallet } from '@aptos-labs/wallet-adapter-react';
+import { Aptos, AptosConfig, Network } from '@aptos-labs/ts-sdk';
+
+     ●​ @aptos-labs/wallet-adapter-react: Provides wallet connection
+        functionality
+     ●​ @aptos-labs/ts-sdk: Aptos blockchain SDK for interaction with the network
+
+
+Configuration​
+const config = new AptosConfig({
+ network: Network.TESTNET,
+ fullnode: 'https://aptos.testnet.porto.movementlabs.xyz/v1',
+ faucet: 'https://fund.testnet.porto.movementlabs.xyz/'
+})
+const aptos = new Aptos(config);
+
+     ●​ Creates a new Aptos configuration instance
+     ●​ Connects to the Aptos mainnet network
+     ●​ Initializes the Aptos client with the configuration
+Component Breakdown​
+1️⃣ Hook Usage​
+const { account, signAndSubmitTransaction } = useWallet();
+
+   ●​ Uses the useWallet hook to get:
+         ○​ account: Current connected wallet account
+         ○​ signAndSubmitTransaction: Function to sign and submit
+            transactions
+
+2️⃣ Transaction Handler​
+const onSignAndSubmitTransaction = async () => {
+
+This function handles:
+   1.​ Account verification
+   2.​ Transaction creation and submission
+   3.​ Transaction confirmation
+
+Transaction Structure​
+{
+ sender: account.address,
+ data: {
+   function: "<address_account>::<module_name>::<function>",
+   functionArguments: [account.address, 1],
+ }
+}
+
+   ●​ sender: The address of the transaction sender
+   ●​ function: Calls the Aptos account transfer function
+   ●​ functionArguments: Array containing:
+        ○​ Recipient address (in this case, sending to self)
+        ○​ Amount to transfer (1 unit)
+
+3️⃣ Transaction Confirmation​
+await aptos.waitForTransaction({ transactionHash: response.hash });
+
+   ●​ Waits for transaction confirmation on the blockchain
+   ●​ Includes error handling for failed transactions
+4️⃣ UI Component​
+return (
+ <button onClick={onSignAndSubmitTransaction}>
+   Sign and submit transaction
+ </button>
+);
+
+   ●​ Renders a simple button
+   ●​ Triggers the transaction process when clicked
+
+
+Usage Example​
+import SignAndSubmit from './components/signAndSubmitTx';
+
+function App() {
+ return (
+   <div>
+    <SignAndSubmit />
+   </div>
+ );
+}
+
+
+Important Notes​
+   1.​   This component requires a connected Aptos wallet to function
+   2.​   It's configured to work with Mainnet (production network)
+   3.​   The current implementation sends 1 unit to the same address (self-transfer)
+   4.​   Error handling is implemented for transaction confirmation
+   5.​   The component should be used within a wallet provider context
+
+
+Fullcode​
+src/components/signAndSubmitTx.tsx
+import React from 'react';
+import { useWallet } from '@aptos-labs/wallet-adapter-react';
+import { Aptos, AptosConfig, Network } from '@aptos-labs/ts-sdk';
+
+const config = new AptosConfig({ network: Network.MAINNET });
+const aptos = new Aptos(config);
+const SignAndSubmit = () => {
+const { account, signAndSubmitTransaction } = useWallet();
+
+const onSignAndSubmitTransaction = async () => {
+  if(account == null) {
+      throw new Error("Unable to find account to sign transaction")
+  }
+  const response = await signAndSubmitTransaction({
+    sender: account.address,
+    data: {
+      function: "0x1::aptos_account::transfer",
+      functionArguments: [account.address, 1],
+    },
+  });
+  // if you want to wait for transaction
+  try {
+    await aptos.waitForTransaction({ transactionHash: response.hash });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+ return (
+   <button onClick={onSignAndSubmitTransaction}>
+    Sign and submit transaction
+   </button>
+ );
+};
+
+export default SignAndSubmit;
+
+
+
+Sign and Verify Message
+Overview​
+This React component creates a user interface for signing and verifying messages
+using an Movement wallet. It's commonly used in blockchain applications to prove
+ownership of a wallet address by signing messages.
+
+
+Key Features​
+   1.​   Message signing
+   2.​   Message verification
+   3.​   Wallet connection status
+   4.​   Error handling
+
+
+How It Works​
+1️⃣ Component Setup​
+const { signMessage, signMessageAndVerify, connected, account } = useWallet();
+
+   ●​ Uses the Aptos wallet adapter to get necessary functions and wallet status
+   ●​ connected: Tells if wallet is connected
+   ●​ account: Contains wallet information
+
+2️⃣ State Management​
+const [message, setMessage] = useState<string>('');
+const [nonce, setNonce] = useState<string>('');
+const [signedMessage, setSignedMessage] = useState<any>(null);
+const [verificationResult, setVerificationResult] = useState<boolean | null>(null);
+const [error, setError] = useState<string | null>(null);
+
+Manages five different states:
+
+   ●​ message: The text message to be signed
+   ●​ nonce: A random string to prevent replay attacks
+   ●​ signedMessage: Stores the signed message response
+   ●​ verificationResult: Stores whether the message verification was
+      successful
+   ●​ error: Stores any error messages
+
+3️⃣ Message Signing Function​
+const handleSignMessage = async () => {
+     setError(null);
+     try {
+       const response = await signMessage({ message, nonce });
+       setSignedMessage(response);
+     } catch (err: any) {
+       setError(`Failed to sign message: ${err.message}`);
+     }
+};
+
+      ●​ Clears any previous errors
+      ●​ Attempts to sign the message using the wallet
+      ●​ Stores the signed message or captures any errors
+
+4️⃣ Message Verification Function​
+const handleVerifyMessage = async () => {
+   setError(null);
+   try {
+     const result = await signMessageAndVerify({ message, nonce });
+     setVerificationResult(result);
+   } catch (err: any) {
+     setError(`Failed to verify message: ${err.message}`);
+   }
+};
+
+      ●​ Clears any previous errors
+      ●​ Verifies the signed message
+      ●​ Stores the verification result or captures any errors
+
+5️⃣ User Interface​
+
+The component renders different UI elements based on wallet connection status:
+
+If wallet is not connected:
+
+      ●​ Shows a message asking user to connect wallet
+
+If wallet is connected:
+    1.​ Shows the connected wallet address
+    2.​ Provides a text area for entering the message
+    3.​ Provides an input field for the nonce
+   4.​ Shows a "Sign Message" button
+   5.​ If message is signed:
+           ○​ Displays the signed message
+           ○​ Shows a "Verify Message" button
+   6.​ Shows verification result if available
+   7.​ Displays any errors that occur
+
+
+Use Cases​
+   1.​ Identity Verification: Prove ownership of a wallet address
+   2.​ Authentication: Can be used as part of a login system
+   3.​ Message Authentication: Ensure messages are authentic and haven't been
+       tampered with
+
+
+Error Handling​
+   ●​ Handles signing errors
+   ●​ Handles verification errors
+   ●​ Displays user-friendly error messages
+
+This component provides a complete solution for signing and verifying messages using
+an Aptos wallet, with a user-friendly interface and proper error handling.
+
+
+Code Example​
+signAndVerify
+import React, { useState } from 'react';
+import { useWallet } from '@aptos-labs/wallet-adapter-react';
+
+const SignMessageDemo = () => {
+const { signMessage, signMessageAndVerify, connected, account } = useWallet();
+const [message, setMessage] = useState<string>('');
+const [nonce, setNonce] = useState<string>('');
+const [signedMessage, setSignedMessage] = useState<any>(null);
+const [verificationResult, setVerificationResult] = useState<boolean | null>(null);
+const [error, setError] = useState<string | null>(null);
+
+const handleSignMessage = async () => {
+ setError(null);
+  try {
+    const response = await signMessage({ message, nonce });
+    setSignedMessage(response);
+  } catch (err: any) {
+    setError(`Failed to sign message: ${err.message}`);
+  }
+};
+
+const handleVerifyMessage = async () => {
+  setError(null);
+  try {
+    const result = await signMessageAndVerify({ message, nonce });
+    setVerificationResult(result);
+  } catch (err: any) {
+    setError(`Failed to verify message: ${err.message}`);
+  }
+};
+
+return (
+ <div>
+  <h1>Aptos Sign and Verify Message</h1>
+  <div>
+    {connected ? (
+     <div>
+      <p>Connected to: {account?.address}</p>
+      <div className="flex flex-col gap-4">
+        <textarea
+         value={message}
+         onChange={(e) => setMessage(e.target.value)}
+         placeholder="Enter your message here"
+         className="border rounded p-2"
+        />
+        <input
+         type="text"
+         value={nonce}
+         onChange={(e) => setNonce(e.target.value)}
+         placeholder="Enter nonce (random string) here"
+         className="border rounded p-2 mt-2"
+        />
+         <button onClick={handleSignMessage} className="bg-blue-500 text-white
+rounded p-2 mt-2">
+          Sign Message
+         </button>
+         {signedMessage && (
+          <div>
+            <h4>Signed Message</h4>
+            <pre>{JSON.stringify(signedMessage, null, 2)}</pre>
+            <button onClick={handleVerifyMessage} className="bg-green-500 text-white
+rounded p-2 mt-2">
+             Verify Message
+            </button>
+          </div>
+         )}
+         {verificationResult !== null && (
+          <div>
+            <h4>Verification Result</h4>
+            <p>{verificationResult ? 'Message is verified!' : 'Failed to verify message.'}</p>
+          </div>
+         )}
+         {error && (
+          <div className="text-red-600">
+            <p>{error}</p>
+          </div>
+         )}
+        </div>
+      </div>
+     ):(
+      <p>Please connect your wallet to sign and verify messages.</p>
+     )}
+    </div>
+   </div>
+ );
+};
+
+export default SignMessageDemo;
+
+
+Sign & Submit BCS Transaction​
+How to sign and submit a BCS (Binary Canonical Serialization) transaction on the
+MoveVM blockchain. It specifically shows how to transfer tokens using the Move
+account module.
+
+
+Function Breakdown​
+Transaction Submission Function​
+const onSignAndSubmitBCSTransaction = async () => {
+   const response = await signAndSubmitTransaction({
+       sender: account.address,
+       data: {
+          function: "0x1::aptos_account::transfer",
+          functionArguments: [AccountAddress.from(account.address), new U64(1)],
+       },
+   });
+   // ... transaction confirmation ...
+};
+
+Key Components:​
+   1.​ Sender: The address of the account initiating the transaction
+   2.​ Function Path: 0x1::aptos_account::transfer
+          ○​ 0x1: Core framework address
+          ○​ aptos_account: Module name
+          ○​ transfer: Function name
+   3.​ Function Arguments:
+          ○​ AccountAddress.from(account.address): Recipient address
+          ○​ new U64(1): Amount to transfer (1 unit)
+
+Transaction Confirmation​
+try {
+  await aptos.waitForTransaction({ transactionHash: response.hash });
+} catch (error) {
+  console.error(error);
+}
+
+   ●​ Waits for transaction confirmation
+   ●​ Handles any errors during confirmation process
+UI Element​
+<button onClick={onSignAndSubmitTransaction}>
+  Sign and submit BCS transaction
+</button>
+
+   ●​ Simple button to trigger the transaction
+
+
+Important Notes​
+   1.​ BCS Format: Uses Binary Canonical Serialization for efficient transaction
+       encoding
+   2.​ Error Handling: Includes basic error handling for transaction confirmation
+   3.​ Amount: Example shows transfer of 1 unit (adjust as needed)
+   4.​ Gas Fees: Transaction will require gas fees (not shown in example)
+
+
+Common Use Cases​
+   1.​ Token transfers
+   2.​ Smart contract interactions
+   3.​ Blockchain state modifications
+
+
+
+Aptos Wallet Standard
+The Movement Network uses the Aptos flavor of Move, which includes Aptos wallets.
+
+Why is this important?
+
+   ●​ For Users: It means you're free to use your favorite Aptos Move wallet with any
+      dApp without worrying about compatibility headaches.
+   ●​ For Developers: You can focus on building amazing dApps, knowing that your
+      application will work smoothly with a wide range of wallets.
+   ●​ For the Move Ecosystem: A unified standard fosters growth and innovation by
+      removing barriers to entry.
+
+Let's break down the key ingredients of this standard.
+
+
+1. Mnemonics: Your Master Key to the Aptos Universe​
+1.1 What are Mnemonics?​
+
+Think of a mnemonic phrase as a super-secure, human-readable password that unlocks
+your digital assets. Instead of a random string of characters, it's a list of 12 or 24 words
+that you can write down and store safely. This phrase is the foundation of your
+account's security, so guard it carefully!
+
+Best Practice: Each account should have its own unique mnemonic. This enhances
+security and makes key rotation (which we'll discuss later) much easier to manage. It's
+like having separate keys for your house, your car, and your safe deposit box – much
+safer than using the same key for everything. While some wallets, especially those
+migrating from other ecosystems, might use a single mnemonic for multiple accounts,
+the Aptos standard strongly recommends a one-to-one relationship between
+mnemonics and accounts.
+
+1.2 Creating Your First Move Account​
+Let's walk through the process of generating a new Aptos account:
+      1.​ Generate Your Mnemonic Phrase: We use a widely adopted standard called
+          BIP39 to generate a cryptographically secure mnemonic. Many wallet
+          applications and libraries will handle this for you automatically.
+      2.​ From Phrase to Seed: Your mnemonic isn't directly used as a key. Instead, it's
+          converted into a "master seed" – a long string of random bits that serves as the
+          starting point for generating your account keys.
+      3.​ Deriving Your Account Address: Here's where BIP44 comes in. It defines a
+          standard way to create a "path" from your master seed to your Aptos account
+          address. This path looks like this: m/44'/637'/0'/0'/0'. Each number
+          represents a specific level of derivation, ensuring that your Aptos address is
+          unique and securely generated. The 637 in the path specifically designates Aptos
+          within the broader cryptocurrency landscape.
+/**
+ * Creates new account with bip44 path and mnemonics,
+ * @param path. (e.g. m/44'/637'/0'/0'/0')
+ * Detailed description: {@link
+https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki}
+ * @param mnemonics.
+ * @returns AptosAccount
+ */
+static fromDerivePath(path: string, mnemonics: string): AptosAccount {
+  if (!AptosAccount.isValidPath(path)) {
+        throw new Error("Invalid derivation path");
+    }
+
+    const normalizeMnemonics = mnemonics
+     .trim()
+     .split(/\s+/)
+     .map((part) => part.toLowerCase())
+     .join(" ");
+
+ const { key } =
+derivePath(bytesToHex(bip39.mnemonicToSeedSync(normalizeMnemonics)), path);
+
+    return new AptosAccount(new Uint8Array(key));
+}
+
+1.3 Supporting Multiple Accounts (The Advanced Route)​
+
+While not recommended for most users, some wallets allow you to manage multiple
+Aptos accounts from a single mnemonic. This is like having a master key that can open
+multiple doors in a building.
+
+How it Works:
+  1.​ Steps 1 and 2 are the same: Generate the mnemonic and master seed.
+  2.​ Account Index: Instead of a fixed path, we introduce an "account index" (i) into
+            the derivation path: m/44'/637'/i'/0'/0'.
+         3.​ Finding Your Accounts: The wallet will increment i (starting from 0, then 1, 2, and
+             so on) to generate multiple account addresses from your single mnemonic.
+
+Searching with a Gap Limit: To avoid searching endlessly for accounts, wallets use a
+"gap limit." This limit (usually set to 10) defines how many empty addresses the wallet
+will check before giving up. So, if the wallet finds 10 consecutive addresses with no
+associated accounts, it will stop searching.
+const gapLimit = 10; // Standard gap limit
+let currentGap = 0;
+
+for (let i = 0; currentGap < gapLimit; i += 1) {
+ const derivationPath = `m/44'/637'/${i}'/0'/0'`;
+ const account = AptosAccount.fromDerivePath(derivationPath, mnemonics);
+ try {
+   const resources = await account.getResources(); // Try fetching resources for the
+account
+   wallet.addAccount(account); // Account exists, add it to the wallet
+   currentGap = 0; // Reset the gap
+ } catch (error) {
+   if (error.status === 404) {
+     currentGap += 1; // Increment the gap if account not found
+   } else {
+     throw new AptosWalletError(AptosWalletErrorCode.InternalError, error);
+   }
+ }
+}
+
+Caution: Managing multiple accounts from one mnemonic can be more complex and
+may have security implications if not handled carefully. It also makes key rotation more
+difficult, as rotating one account derived from the mnemonic might affect others.
+
+
+2. Bridging the Gap: How Wallets and dApps Communicate​
+2.1 The Universal Language: The AptosWallet Interface​
+
+To ensure smooth communication, wallets must speak a common language. This is
+defined by the AptosWallet interface, as specified in AIP-62. Think of it as a contract
+that all wallets must adhere to.
+class MyWallet implements AptosWallet {
+ url: string;
+ version: "1.0.0";
+ name: string;
+ icon: `data:image/svg+xml;base64,${string}` | `data:image/webp;base64,${string}` |
+`data:image/png;base64,${string}` | `data:image/gif;base64,${string}`;
+ chains: AptosChain[];
+ features: AptosFeatures;
+ accounts: readonly AptosWalletAccount[];
+}
+
+What does this mean?
+
+Every Aptos-compatible wallet will have properties like:
+
+   ●​ url: The URL of the wallet.
+   ●​ version: The wallet's version number.
+   ●​ name: The wallet's name (e.g., "Petra," "Martian").
+   ●​ icon: An icon representing the wallet.
+   ●​ chains: The Aptos chains it supports (e.g., mainnet, testnet).
+   ●​ features: The capabilities of the wallet (e.g., connecting, signing transactions).
+   ●​ accounts: A list of the user's accounts managed by the wallet.
+
+2.2. Inside the Wallet: The AptosWalletAccount Interface​
+
+Each account within a wallet also has a standard interface: AptosWalletAccount.
+enum AptosAccountVariant {
+ Ed25519,
+ MultiEd25519,
+ SingleKey,
+ MultiKey,
+}
+
+class AptosWalletAccount implements WalletAccount {
+ address: string;
+ publicKey: Uint8Array;
+ chains: AptosChain[];
+ features: AptosFeatures;
+ variant: AptosAccountVariant;
+ label?: string;
+ icon?: `data:image/svg+xml;base64,${string}` | `data:image/webp;base64,${string}` |
+`data:image/png;base64,${string}` | `data:image/gif;base64,${string}`;
+}
+
+Key Properties:
+
+   ●​ address: The account's public address on the Aptos blockchain.
+   ●​ publicKey: The public key associated with the account.
+   ●​ chains: The Aptos chains this account is valid on.
+   ●​ features: The capabilities of this specific account.
+   ●​ variant: The type of cryptographic scheme used by the account (e.g., Ed25519,
+      MultiEd25519).
+   ●​ label and icon: Optional properties to help users identify and manage their
+      accounts.
+Wallet Registration: Web extension wallets (like those installed from the Chrome Web
+Store) need to actively register themselves using a registerWallet function. This
+lets dApps know that the wallet is installed and ready to be used.
+const myWallet = new MyWallet();
+registerWallet(myWallet);
+
+2.3 Handling Errors Gracefully: The AptosWalletError​
+
+When things go wrong (and they sometimes do), wallets need a consistent way to
+report errors. The AptosWalletError class provides a standardized approach.
+Wallets can throw predefined errors like Unauthorized or InternalError, or they
+can create custom errors with specific error codes and messages.
+// Using the default message
+if (error) {
+ throw new AptosWalletError(AptosWalletErrorCode.Unauthorized);
+}
+
+// Using a custom message
+if (error) {
+ throw new AptosWalletError(
+   AptosWalletErrorCode.Unauthorized,
+   "My custom unauthorized message"
+ );
+}
+
+// Using a custom error code
+if (error) {
+ throw new AptosWalletError(-32000, "Invalid Input");
+}
+
+Why is this important?
+
+   ●​ dApp developers can easily handle different error scenarios without writing
+      wallet-specific code.
+   ●​ Users get clear and consistent error messages, regardless of which wallet they're
+      using.
+
+
+3. Integrating with Wallets: A dApp Developer's Toolkit​
+3.1 The Easy Route: The Wallet Adapter Standard​
+
+For a seamless integration experience, dApp developers are encouraged to use the
+Aptos Wallet Adapter Standard. This standard provides a set of tools and libraries that
+simplify the process of connecting to multiple wallets. The Wallet Adapter Standard is
+designed to work across different blockchain ecosystems, making it a versatile solution.
+
+Think of the Wallet Adapter as a universal remote control for your TV. You don't need a
+separate remote for each device; the universal remote handles it all.
+
+3.2. The Custom Path: Rolling Your Own Integration​
+
+If you need more control or want to build a custom integration, you can use the
+getAptosWallets() function. This function retrieves a list of all currently registered
+Aptos wallets that comply with the standard.
+import { getAptosWallets } from "@aptos-labs/wallet-standard";
+
+let { aptosWallets, on } = getAptosWallets();
+
+Dynamic Wallet Discovery: dApps can listen for events when new wallets are registered
+or unregistered. This allows them to dynamically update their UI and provide users with
+the most up-to-date list of available wallets.
+const removeRegisterListener = on("register", () => {
+ let { aptosWallets } = getAptosWallets();
+ // Update the UI with the newly registered wallets
+});
+
+const removeUnregisterListener = on("unregister", () => {
+ let { aptosWallets } = getAptosWallets();
+ // Update the UI to remove unregistered wallets
+});
+
+When a user wants to connect, the dApp can simply call the appropriate function
+offered by the wallet (e.g., connect()).
+const onConnect = async () => {
+try {
+  const response = await wallet.features["aptos:connect"].connect();
+  console.log("Wallet connected:", response);
+  // Handle successful connection
+} catch (error) {
+     console.error("Connection error:", error);
+     // Handle connection error, display error message, etc.
+ }
+};
+
+Example Scenario: A dApp might have a "Connect Wallet" button. When clicked, the
+dApp calls getAptosWallets(), displays the available wallets to the user, and then,
+upon user selection, calls the selected wallet's connect() function to initiate the
+connection.
+
+
+4. Key Rotation: Upgrading Your Security​
+4.1. What is Key Rotation?​
+
+Imagine you lose your house keys. You wouldn't just keep using the same locks, right?
+You'd change them. Key rotation is a similar concept in the blockchain world. It's the
+process of updating your account's authentication key to a new one, enhancing security
+in case your old key is compromised.
+
+4.2 The Future of Aptos Key Rotation​
+
+      ●​ Implementation Status: While the on-chain mechanism for mapping rotated keys
+          is already implemented, wallet support is still under development. SDK
+          integration is also actively being worked on.
+      ●​ How It Will Work (for Wallets Importing Private Keys):
+      1.​ Derive the Authentication Key: The wallet derives the authentication key from the
+          imported private key.
+      2.​ On-Chain Lookup: The wallet checks the Aptos blockchain's account origination
+          table to see if an account with this authentication key already exists.
+              ○​ New Account: If no matching account is found, it means it's a brand-new
+                  account, and the authentication key will be used as the account address.
+              ○​ Rotated Key: If a matching account is found, it indicates that the key has
+                  been rotated. The wallet will then use the actual account address stored in
+                  the table.
+
+Why is Key Rotation Important?
+
+      ●​ Enhanced Security: Regularly rotating your keys reduces the risk of unauthorized
+         access if a key is compromised.
+   ●​ Account Recovery: In some scenarios, key rotation can be used as a mechanism
+      for account recovery.
+
+
+
+Templates and Docs
+Below you can find a list of templates and documentations for Wallet SDKs from many
+of our partnered wallets. In some cases you will have full templates for you to start from
+that can auto detect any Aptos Wallets, in other cases you will have documentation for
+you to implement their specific SDK into your dApp.
+OKX Connect
+OKX Connect Documentation
+
+Nightly Connect Template
+Starter Template for Nightly Connect
+
+Razor Kit
+Razor Kit Documentation
+
+
+
+Aptos Python SDK
+Aptos provides a lightly maintained official Python SDK. It is available on PyPi with the
+source code in the aptos-python-sdk GitHub repository. Much of the functionality of the
+Python SDK mirrors the Typescript SDK. The primary purpose of the Python SDK is to
+help Python developers to quickly become familiar with Aptos and as an
+accompaniment to Aptos tutorials.
+
+
+Installation​
+Install with pip​
+pip3 install aptos-sdk
+
+Install from source code​
+git clone https://github.com/aptos-labs/aptos-python-sdk
+pip3 install . --user
+
+Install by embedding​
+cd /path/to/python/project
+cp -r /path/to/aptos-python-sdk aptos-sdk
+
+
+Usage​
+from aptos_sdk import AptosClient
+
+client = AptosClient("https://aptos.testnet.bardock.movem
+
+
+
+Aptos Rust SDK
+Aptos provides an official lightly supported Rust SDK in the Aptos-core GitHub
+repository. To use the Rust SDK, add the following dependency and patches on the git
+repo directly in your Cargo.toml, like this:
+[dependencies]
+aptos-sdk = { git = "https://github.com/aptos-labs/aptos-core", branch = "devnet" }
+
+[patch.crates-io]
+merlin = { git = "https://github.com/aptos-labs/merlin" }
+x25519-dalek = { git = "https://github.com/aptos-labs/x25519-dalek", branch =
+"zeroize_v1" }
+
+You must also create a .cargo/config.toml file with this content:
+[build]
+rustflags = ["--cfg", "tokio_unstable"]
+
+
+Usage​
+Full example availables here.
+
+Network endpoints should be replaced with the appropriate Movement endpoints.
+
+
+
+Indexers
+The Movement Indexer is a GraphQL API you can use to retrive aggregate data,
+historical data, and data that might be hard to get from the simpler full node API.
+ Service                                        URL
+API         https://cloud.hasura.io/public/graphiql?endpoint=https://indexer.testnet.p
+Explorer    orto.movementnetwork.xyz/v1/graphql
+
+GraphQl https://indexer.testnet.porto.movementnetwork.xyz/v1/graphql
+Endpoint
+
+
+Architecture​
+There are three main components to indexing with the Movement Network. We first
+have the Movement full node which provides a gRPC stream of transactions. The gRPC
+stream of transactions is consumed by the Transaction Streaming Service which
+includes the following components:
+
+   ●​ Cache Worker: Pulls transactions from the node and stores them in Redis.
+   ●​ File Store: Fetches transactions from Redis and stores them in a filesystem.
+   ●​ Indexer API: Consumes the data-service providing a GraphQL API to dApps and
+      other clients wishing to query the network.
+
+The Indexer API also allows the development of customized processors.
+
+
+Running the Transaction Streaming Service​
+The following guides from Aptos are provided: Aptos Documentation
+
+
+Indexing Movement - Future Plans​
+Movement Labs plans to provide a hosted Transaction Stream Service in the near
+future. In the meantime, anyone wishing to index the Movement network would need to
+self-host their own Transaction Streaming Service.
+
+
+Providing a GraphQL API​
+With the Data Service running, the Indexer API can be configured to consume it as per
+the following repository to provide a GraphQL API to downstream clients:
+
+Data Service: Serves transactions via a gRPC stream to downstream clients. It pulls
+from either the cache or the file store depending on the age of the transaction.
+Example Queries​
+NFT Queries​
+
+1. Get all NFTs owned by an address with their collection info​
+query GetUserNFTs {
+ current_token_ownerships_v2(
+   where: {
+     owner_address: {_eq: "0x123..."},
+     amount: {_gt: 0},
+     is_fungible_v2: {_eq: false}
+   }
+ ){
+   token_data_id
+   amount
+   current_token_data: current_token_data {
+     token_name
+     token_uri
+     token_properties
+     collection_id
+     current_collection: current_collection {
+       collection_name
+       creator_address
+       description
+       uri
+     }
+   }
+ }
+}
+
+2. Get Recent NFT Sales/Transfers with Price Info​
+query GetRecentNFTSales {
+token_activities_v2(
+ where: {
+   type: {_in: ["0x3::token::DepositEvent", "0x3::token::WithdrawEvent"]},
+   is_fungible_v2: {_eq: false}
+ },
+ order_by: {transaction_timestamp: desc},
+ limit: 50
+ ){
+   transaction_version
+   transaction_timestamp
+   from_address
+   to_address
+   token_amount
+   current_token_data {
+     token_name
+     collection_id
+     current_collection {
+       collection_name
+     }
+   }
+ }
+}
+
+3. Get Collection Statistics​
+query GetCollectionStats {
+current_collections_v2(
+ where: {
+   collection_id: {_eq: "0x123..."}
+ }
+){
+ collection_name
+ creator_address
+ current_supply
+ max_supply
+ description
+ uri
+ # Get ownership distribution
+ current_token_ownerships_v2_aggregate(
+   where: {
+     amount: {_gt: 0}
+   }
+ ){
+   aggregate {
+     count(distinct: true)
+   }
+ }
+ }
+}
+
+DeFi Queries​
+
+1. Get User's Token Balances​
+query GetUserTokenBalances {
+ current_fungible_asset_balances(
+   where: {
+     owner_address: {_eq: "0x123..."},
+     amount: {_gt: 0}
+   }
+ ){
+   asset_type
+   amount
+   last_transaction_timestamp
+   metadata
+ }
+}
+
+2. Track Large Token Transfers​
+query GetLargeTokenTransfers {
+ fungible_asset_activities(
+   where: {
+     amount: {_gt: "1000000000"}, # Adjust threshold as needed
+     type: {_in: ["0x1::coin::WithdrawEvent", "0x1::coin::DepositEvent"]}
+   },
+   order_by: {transaction_timestamp: desc},
+   limit: 100
+ ){
+   transaction_version
+   transaction_timestamp
+   amount
+   asset_type
+   type
+   owner_address
+   is_transaction_success
+ }
+}
+3. Get Token Activity History for an Address​
+query GetAddressTokenHistory {
+ account_transactions(
+   where: {
+     account_address: {_eq: "0x123..."}
+   },
+   order_by: {transaction_version: desc}
+ ){
+   transaction_version
+   fungible_asset_activities {
+     amount
+     asset_type
+     type
+     transaction_timestamp
+   }
+ }
+}
+
+
+
+Oracles
+This document explains how to use real-time data from Pyth Network in modules on the
+Movement Porto testnet.
+
+
+Configuring the Move.toml file​
+Add the Pyth Contract to your project dependencies in the Move.toml file like so:
+[dependencies]
+Pyth = { git = "https://github.com/pyth-network/pyth-crosschain.git", subdir =
+"target_chains/aptos/contracts", rev = "main" }
+
+The named addresses of pyth, wormhole, and deployer must be defined at compile
+time. These addresses are used to interact with the Pyth contract on Movement.
+
+The Pyth smart contracts are deployed on the Movement Network on the following
+addresses:
+  Name                                          Address
+pyth        0x9357e76fe965c9956a76181ee49f66d51b7f9c3800182a944ed96be863
+            01e49f
+
+wormhol     0x9236893d6444b208b7e0b3e8d4be4ace90b6d17817ab7d1584e46a33ef
+e           5c50c9
+
+deployer    0xa3ad2d9c8114b9a4fe97d45b7a9d3c731148d936b0f5dd396fc20a53a1
+            1a70da
+
+
+Example Code​
+The code snippet below provides an example module fetching the BTC/USD price from
+Pyth price feeds:
+module example::example {
+ use pyth::pyth;
+ use pyth::price::Price;
+ use pyth::price_identifier;
+ use aptos_framework::coin;
+
+  // Add the pyth_price_update argument to any method on your contract that needs to
+read the Pyth price.
+  // See https://docs.pyth.network/price-feeds/fetch-price-updates for more information
+on how to fetch the pyth_price_update.
+  public fun get_btc_usd_price(user: &signer, pyth_price_update: vector<vector<u8>>):
+Price {
+
+   // First update the Pyth price feeds
+   let coins = coin::withdraw(user, pyth::get_update_fee(&pyth_price_update));
+   pyth::update_price_feeds(pyth_price_update, coins);
+
+    // Read the current price from a price feed.
+    // Each price feed (e.g., BTC/USD) is identified by a price feed ID.
+    // The complete list of feed IDs is available at
+https://pyth.network/developers/price-feed-ids
+    // Note: Aptos uses the Pyth price feed ID without the `0x` prefix.
+    let btc_price_identifier =
+x"e62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b43";
+    let btc_usd_price_id = price_identifier::from_byte_vec(btc_price_identifier);
+    pyth::get_price(btc_usd_price_id)
+    }
+}
+
+The code snippet above does the following:
+   1.​ Call pyth::get_update_fee to get the fee required to update the Pyth price
+       feeds.
+   2.​ Call pyth::update_price_feeds and pass pyth_price_update to update the
+       Pyth price feeds.
+   3.​ Call pyth::get_price to read the current price, providing the price feed ID
+       you wish to read.
+
+
+API Reference​
+The Aptos API reference (Which is also compatible with Movement) lets you
+interactively explore the complete API of the Pyth contract.
+
+
+Example Applications​
+Minimal on-chain contract, which updates and returns the BTC/USD price from Pyth
+price feeds.
+
+Mint NFT, which uses Pyth price feeds to mint an NFT.
+
+
+
+Run a Follower Node
+This guide will help you set up and run a Movement follower node. The Bardock Testnet
+and Mainnet currently support this feature. Learn more about Node architecture here.
+For simplicity we have provided instruction for deploying using an Ansible script below.
+
+
+Hardware Recommendations​
+        ●​ 32 cores
+        ●​ 64 GB RAM
+        ●​ 2 TB SSD w/ 60K IOPS and 200 MiB/s throughput
+
+
+Deployment​
+Clone Movement Repository​
+
+git clone https://github.com/movementlabsxyz/movement
+cd movement
+
+
+
+Configuration​
+
+Update the Variables below in the movement-full-follower.yml file for Mainnet.
+This is located in docs/movement-node/run/ansible/follower-node/mainnet
+or docs/movement-node/run/ansible/follower-node/ depending on if you are
+deploying to Mainnet or Testnet.
+
+Mainnet Configuration​
+
+vars:
+  repo_url: "https://github.com/movementlabsxyz/movement"
+  destination_path: "/home/{{ user }}/movement"
+  movement_sync:
+'follower::mainnet-l-sync-bucket-sync<=>{default_signer_address_whitelist,maptos,mapt
+os-storage,suzuka-da-db}/**'
+  chain_id: "126"
+
+ movement_da_light_node_connection_protocol: "https"
+ movement_da_light_node_connection_hostname: "m1-da-light-node.mainnet"
+ movement_da_light_node_connection_port: "443"
+
+ aws_region: "us-west-1"
+ rev: "{{ movement_container_version }}"
+
+
+Bardock Testnet Configuration​
+
+vars:
+  repo_url: "https://github.com/movementlabsxyz/movement"
+  destination_path: "/home/{{ user }}/movement"
+  movement_sync:
+"follower::mtnet-l-sync-bucket-sync<=>{maptos,maptos-storage,movement-da-db}/**"
+  chain_id: "250"
+ movement_da_light_node_connection_protocol: "https"
+ movement_da_light_node_connection_hostname:
+"movement-celestia-da-light-node.testnet.bardock.movementlabs.xyz"
+ movement_da_light_node_connection_port: "443"
+
+ aws_region: "us-west-1"
+ rev: "{{ movement_container_version }}"
+
+
+You may need to add additional variables for the AWS SDK to properly authenticate. If
+you are running into server errors please add additional variables to the
+movement-full-follower.service.j2 file:
+Environment="AWS_ACCESS_KEY_ID={{ aws_access_key_id }}"
+Environment="AWS_SECRET_ACCESS_KEY={{ aws_secret_access_key }}"
+
+As well as to the movement-full-follower.yml file:
+ aws_access_key_id: "{{ aws_access_key_id }}"
+ aws_secret_access_key: "{{ aws_secret_access_key }}"
+
+Fetching the Latest Container Revision​
+
+Please use the revision below:
+
+a209fa3324142445b779c878842b33fd54920f8e
+
+Generally, you should be able to use the latest revision by running the following
+command:
+
+CONTAINER_REV=$(git rev-parse HEAD)
+echo "CONTAINER_REV=${CONTAINER_REV}"
+
+
+
+Sample Deployment Scripts​
+
+Mainnet​
+
+ansible-playbook --inventory <inventory_url>, \
+ --user <user> \
+ --extra-vars
+"movement_container_version=82e923e77ae9255b233d50b96377ae2b8dfa1828" \
+ --extra-vars "user=<user>" \
+
+docs/movement-node/run/ansible/follower-node/mainnet/movement-full-follower.yml \
+ --private-key <pem_file>
+
+info
+
+Please generate a private key through your cloud provider. The example scripts use a
+PEM file generated by AWS.
+
+Replace the following:
+
+   ●​ <inventory_url>: The URL or IP of your inventory.
+   ●​ <user>: Your username.
+   ●​ <pem_file>: Your private key file.
+
+Example:
+
+ansible-playbook --inventory ec2-18-144-5-233.us-west-1.compute.amazonaws.com, \
+ --user rahat \
+ --extra-vars
+"movement_container_version=82e923e77ae9255b233d50b96377ae2b8dfa1828" \
+ --extra-vars "user=rahat" \
+
+docs/movement-node/run/ansible/follower-node/mainnet/movement-full-follower.yml \
+ --private-key rahat_deployment_test.pem
+
+
+Bardock Testnet​
+
+For Bardock Testnet, please use the following example:
+
+ansible-playbook --inventory ec2-18-144-5-233.us-west-1.compute.amazonaws.com, \
+ --user rahat \
+ --extra-vars
+"movement_container_version=82e923e77ae9255b233d50b96377ae2b8dfa1828" \
+ --extra-vars "user=rahat" \
+ docs/movement-node/run/ansible/follower-node/movement-full-follower.yml \
+ --private-key rahat_deployment_test.pem
+
+
+
+Verify Deployment​
+
+   ●​ Connect to your instance (in the above example I ssh into my instance)
+   ●​ run the command curl localhost:30731/v1
+   ●​ Output should be similar to this:
+
+{"chain_id":126,"epoch":"1","ledger_version":"9","oldest_ledger_version":"0","ledger_timesta
+mp":"1732636319660843","node_role":"validator","oldest_block_height":"0","block_height"
+:"3","git_hash":"9dfc8e7a3d622597dfd81cc4ba480a5377f87a41"}
+
+
+Compare to:
+
+   ●​ Mainnet endpoint: https://mainnet.movementnetwork.xyz/v1
+   ●​ Testnet endpoint: https://aptos.testnet.bardock.movementlabs.xyz/v1
+
+
+Run Locally​
+It is easiest to gain quick familiarity with the Movement Follower Node by running it
+locally.
+
+To do this, ensure you have nix installed. We recommend the Determinate Systems nix
+installation script. You can find it here.
+
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s --
+install
+
+
+After installing nix, clone the Movement repository and open the nix-shell
+environment.
+
+# if you have not cloned the repository yet
+git clone https://github.com/movementlabsxyz/movement
+cd movement
+nix develop
+This should install all dependencies needed to work on the Movement Follower Node.
+
+You can now either run the follower node natively or with our containers via the provided
+just commands.
+
+First create, an environment file for the follower node. The example below is for the
+Movement Testnet. Comments are made on how to change the environment file for
+other networks.
+CONTAINER_REV=<latest-commit-hash>
+DOT_MOVEMENT_PATH=./.movement
+MAPTOS_CHAIN_ID=250 # change this to the chain id of the network you are running
+MOVEMENT_SYNC="follower::mtnet-l-sync-bucket-sync<=>{maptos,maptos-storage,mo
+vement-da-db}/**" # change to the sync bucket for the network you are running
+MOVEMENT_DA_LIGHT_NODE_CONNECTION_PROTOCOL=https
+MOVEMENT_DA_LIGHT_NODE_CONNECTION_HOSTNAME="movement-celestia-da-ligh
+t-node.testnet.bardock.movementlabs.xyz" # change this to the hostname of the
+Movement DA Light Node service on network you are running
+MOVEMENT_DA_LIGHT_NODE_CONNECTION_PORT=443
+# you may need to provide AWS credentials for the Amazon SDK to properly interact
+with the sync bucket
+# often this will be picked up appropriately if your environment is configured to use AWS
+# the bucket has public read access so you may not need to provide credentials
+AWS_ACCESS_KEY_ID=<your-access-key>
+AWS_SECRET_ACCESS_KEY=<your-secret-access-key>
+AWS_DEFAULT_REGION=us-west-1 # change this to match the region of the sync bucket
+AWS_REGION=us-west-1 # change this to match the region of the sync bucket
+
+
+To run natively you can use the following command:
+
+source .env
+just movement-full-node native build.setup.follower -t=false
+
+
+To run with containers you can use the following command:
+
+just movement-full-node docker-compose follower
+
+
+To check on the status of the service under either runner, run:
+curl localhost:30731/v1
+
+
+You should see a ledger_version field CLOSE to the other values on the network, e.g.,
+https://aptos.testnet.bardock.movementlabs.xyz/v1.
+
+
+
+FAQ
+Frequently asked questions about working with Movement as a developer.
+
+
+What is Movement Labs?​
+Movement Labs makes the Move programming language accessible across the entire
+modular blockchain ecosystem. By bringing the Move Virtual Machine to Ethereum
+through its innovative Move Layer 2, Movement Labs is creating a secure, scalable,
+developer-friendly blockchain infrastructure combining the best aspects of modular and
+monolithic architectures.
+
+
+Is Mainnet/Testnet/Devnet live?​
+Currently we are live on testnet and the latest information on networks can be found
+here.
+
+
+Why are there three different endpoints for each language?​
+The Movement Network is a single L2 built with different environments. During our
+devnet and testnet phases these are currently on separate networks but as we continue
+building towards mainnet and beyond we plan to consolidate these into a single
+network.
+
+
+How do I get started building?​
+Our getting started guide will help you through finding exactly what you need in order to
+start building on Movement.
+
+
+How can I get help?​
+Make sure to join our Discord and get yourself a developer role. You can ask any
+questions you have in dev-chat where someone in the community or our Developer
+Relations team will be able to answer your questions.
+
+
+What are the hardware requirements for running a node?​
+For running a Movement follower node, we recommend:
+
+   ●​   CPU: 16 cores
+   ●​   RAM: 64GB
+   ●​   Storage: 4TB NVMe SSD
+   ●​   Network: 2.5Gbps
+
+However, minimum requirements are 8 cores, 32GB RAM, and 2TB storage.
+
+
+What programming languages are supported on Movement?​
+Movement supports multiple programming languages:
+
+   ●​ Move language for native Move development
+   ●​ Solidity for EVM compatibility
+   ●​ Any language that can compile to EVM bytecode
+
+
+How does Movement ensure security?​
+Movement implements multiple security measures:
+
+   ●​   Secure Move VM implementation
+   ●​   Regular security audits
+   ●​   Battle-tested EVM compatibility layer
+   ●​   Strong consensus mechanism
+   ●​   Robust validator network
+
+
+What tools are available for developers?​
+Movement provides a comprehensive suite of developer tools:
+
+   ●​ Movement CLI
+   ●​ SDK support for multiple languages
+   ●​   Development frameworks
+   ●​   Testing environments
+   ●​   Block explorers
+   ●​   Documentation and tutorials
+
+
+
+Movement Labs Node API
+The Movement Labs Full Node Node API is a RESTful API for client applications to
+interact with the Movement blockchain. Use this section of the documentation to review
+all requests that can be made to the full node.
+Contact
+Movement Labs:
+URL: https://github.com/movementlabsxyz/movement
+License
+Apache 2.0
+
+Movement doc: Getting Started | Movement Network | Movement
+
+
+STARTER KIT FOR DAPP DEVELOPERS
+Get started with create-aptos-dapp
+create-aptos-dapp provides a starter kit for dapp developers to easily bootstrap a frontend
+and a smart contract on the Aptos network.
+To start with the create-aptos-dapp tool you can simply run this command on your terminal:
+npx create-aptos-dapp@latest
+# Simple Dapp on Movement network
+
+This **tutorial** guides you through building a simple React DApp
+that:
+
+1. Uses **Razor Wallet Kit** to connect to a Movement network wallet.
+2. Displays wallet status and account info.
+3. **Signs** a custom message (e.g., `"GMOVE"`)
+
+---
+
+## Table of Contents
+
+1. [Prerequisites](#prerequisites)
+2. [Project Setup](#project-setup)
+      - [1. Create a New React App](#1-create-a-new-react-app)
+      - [2. Install Dependencies](#2-install-dependencies)
+3.    [File Structure](#file-structure)
+4.    [Create and Edit Files](#create-and-edit-files)
+      - [1. src/index.js](#1-srcindexjs)
+      - [2. src/App.js](#2-srcappjs)
+      - [3. src/index.css](#3-srcindexcss)
+5.    [Run the App](#run-the-app)
+6.    [Demo & Screenshots](#demo--screenshots)
+      - [Steps to Demo](#steps-to-demo)
+      - [Screenshots](#screenshots)
+7.    [How It Works](#how-it-works)
+8.    [Further Customizations](#further-customizations)
+9.    [Resources](#Resources)
+---
+
+## Prerequisites
+
+- **Node.js** (v14+) and **npm** (or Yarn).
+- Basic knowledge of React and modern JavaScript.
+- A **Movement network supported wallet** installed in your browser
+(e.g., Razor Wallet, Nightly, etc.).
+
+---
+
+## Project Setup
+
+### 1. Create a New React App
+
+1. **Create a new folder** for your project (e.g., `gmove-dapp`).
+2. **Open a terminal** in that folder and run:
+   ```bash
+   npx create-react-app .
+   ```
+   > The `.` indicates you want to initialize the React project in
+the **current folder**.
+
+3. After it finishes, you’ll have the default React structure with
+`src`, `public`, and other files.
+
+### 2. Install Dependencies
+
+While inside your project folder, install the following:
+- **Aptos** (Aptos SDK for JavaScript/TypeScript)
+- **@razorlabs/wallet-kit** (Razor Wallet connectivity)
+```bash
+npm install aptos @razorlabs/wallet-kit
+```
+
+---
+
+## File Structure
+
+Your folder now looks like:
+
+```
+gmove-dapp/
+  ├─ node_modules/
+  ├─ public/
+  ├─ src/
+  │ ├─ App.js
+  │ ├─ index.js
+  │ ├─ index.css
+  │ └─ ...
+  ├─ package.json
+  ├─ package-lock.json
+  └─ README.md (this file)
+```
+
+---
+
+## Create and Edit Files
+
+Below are **minimal** versions of `index.js`, `App.js`, and
+`index.css` that integrate Razor Wallet Kit and sign a message.
+
+### 1. `src/index.js`
+
+Wrap your `<App />` with `AptosWalletProvider`. Configure the
+networks (e.g., testnet, mainnet).
+
+```jsx
+// src/index.js
+
+import   React from 'react';
+import   { createRoot } from 'react-dom/client';
+import   { AptosWalletProvider } from '@razorlabs/wallet-kit';
+import   App from './App';
+// Define your Movement networks
+const networks = [
+ onst networks = [
+   {
+      name: 'Movement Porto Testnet',
+      chainId: '177',
+      rpcUrl: 'https://aptos.testnet.porto.movementlabs.xyz/v1',
+   },
+   {
+      name: '',
+      chainId: '',
+      rpcUrl: '',
+   },
+];
+
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render(
+   <AptosWalletProvider networks={networks} defaultNetwork="testnet">
+     <App />
+   </AptosWalletProvider>
+);
+```
+
+### 2. `src/App.js`
+
+Below is an example **App.js** with two main parts:
+1. **WalletConnectUI** sub-component: handles Connect button, wallet
+status, and address display.
+2. **Message signing** section: user can sign the message `"GMOVE"`
+when connected.
+
+```jsx
+// src/App.js
+
+import React, { useState } from 'react';
+import {
+  AptosConnectButton,
+  useAptosWallet,
+  addressEllipsis,
+} from '@razorlabs/wallet-kit';
+import '@razorlabs/wallet-kit/style.css';
+import './index.css'; // Our custom CSS
+/*
+     Sub-component:
+     - Connect button
+     - Display wallet status & account address
+*/
+function WalletConnectUI() {
+   const wallet = useAptosWallet();
+
+  return (
+     <div className="card">
+       <AptosConnectButton className="custom-connect-button" />
+       <p>
+          <strong>Wallet status:</strong> {wallet.status}
+       </p>
+       {wallet.account && (
+          <p>
+            <strong>Account:</strong>
+{addressEllipsis(wallet.account.address)}
+          </p>
+       )}
+     </div>
+  );
+}
+
+/*
+     Main App component:
+     - Renders WalletConnectUI
+     - Provides a button to sign the "GMOVE" message
+*/
+function App() {
+   const wallet = useAptosWallet();
+   const [signature, setSignature] = useState(null);
+
+     async function signMessage() {
+       if (!wallet.connected) {
+         alert('Please connect your wallet first!');
+         return;
+       }
+       try {
+         const res = await wallet.signMessage({
+           message: 'GMOVE',
+           nonce: '1234', // Example nonce
+         });
+         console.log('Signed message result:', res);
+         setSignature(res.signature);
+          alert('Message signed successfully!');
+        } catch (error) {
+          console.error('Signing message failed:', error);
+          alert('Failed to sign message. Check console for details.');
+        }
+    }
+
+    return (
+       <div className="app-container">
+         <h1 className="app-title">Movement DApp — Sign a Message</h1>
+         <WalletConnectUI />
+         {wallet.status === 'connected' && (
+            <div className="card">
+              <h2>Sign the Message "GMOVE"</h2>
+              <button onClick={signMessage} className="primary-button">
+                 Sign Message
+              </button>
+              {signature && (
+                 <div style={{ marginTop: '1rem' }}>
+                   <strong>Signature:</strong>
+                   <p>{signature}</p>
+                 </div>
+              )}
+            </div>
+         )}
+       </div>
+    );
+}
+
+export default App;
+```
+
+### 3. `src/index.css`
+
+Use this CSS for a **clean** layout:
+
+```css
+/* src/index.css */
+
+/* Global reset & base */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+  font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.app-title {
+  margin: 0.5rem;
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+/* Card style */
+.card {
+  background: #fff;
+  width: 100%;
+  max-width: 500px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Main button style */
+.primary-button {
+  background-color: #6366f1;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.primary-button:hover {
+  background-color: #4f46e5;
+}
+
+/* Example custom connect button override */
+.custom-connect-button {
+  background-color: #6366f1;
+  color: #fff !important;
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.custom-connect-button:hover {
+  background-color: #4f46e5;
+}
+```
+
+---
+
+## Run the App
+
+In your project’s root directory:
+
+```bash
+npm start
+```
+
+1. Open [http://localhost:3000](http://localhost:3000) in your
+browser.
+2. **Connect** your wallet (e.g., Razor Wallet).
+3. If connected, click **"Sign Message"** to sign the `"GMOVE"`
+message.
+4. The signature appears below the button.
+
+Check your **browser console** for the detailed result of the
+signature request.
+
+---
+## How It Works
+
+1. **AptosWalletProvider**
+   - Provides context for Razor Wallet Kit to detect wallets, manage
+connection state, and sign requests.
+
+2. **`useAptosWallet` Hook**
+   - **`wallet.status`**: `'disconnected'`, `'connected'`, etc.
+   - **`wallet.account`**: The connected account’s address,
+publicKey, etc.
+   - **`wallet.signMessage(...)`**: Prompts the wallet to sign a
+custom message.
+
+3. **UI**
+   - **`WalletConnectUI`** sub-component: Displays the connect button
+and account details.
+   - **Sign Message** card: Visible only if `wallet.status ===
+'connected'`.
+
+---
+
+### Steps to Demo
+
+1. **Open** your DApp in the browser (e.g., `http://localhost:3000`).
+2. **Click** the **Connect** button to open the Razor wallet connect
+flow.
+3. **Approve** the connection request in your Movement Wallet.
+4. Once connected, notice the **wallet status** and **account
+address** fields update.
+5. **Click** **Sign Message** to sign `"GMOVE"`.
+6. **Confirm** in the wallet popup.
+7. After approval, a success alert is shown, and the signature is
+displayed in your DApp.
+
+### Screenshots
+
+![Home Page with Connect Button](./screenshots/homepage.png)
+![Connected Wallet State](./screenshots/connected.png)
+![Signing the Message](./screenshots/sign-message.png)
+
+---
+
+## Further Customizations
+
+- **Change the Signed Message**
+  - In `App.js`, replace `message: 'GMOVE'` with any string (like
+`"Hello, Movement!"`).
+
+- **Use a Random Nonce**
+  - `nonce: Date.now().toString()` to ensure uniqueness each time.
+
+- **Custom UI for Connect**
+  - Instead of `<AptosConnectButton>`, build your own connect button
+with `wallet.connect()` and `wallet.disconnect()` for total design
+control.
+- **Network Switching**
+  - Define multiple networks in `index.js` and call
+`wallet.switchNetwork('mainnet')` or `'testnet'` to change networks
+on-the-fly.
+
+That’s it! You now have a **React** DApp that connects to
+**Movement** with **Razor Wallet Kit** and signs a custom message
+(“GMOVE”). From here, you can extend it to handle **on-chain
+transactions**, **token interactions**, or **NFT minting**—the
+possibilities are endless. Happy building!
+
+
+## Resources
+
+- [Razor Wallet Kit
+Documentation](https://kit.razorwallet.xyz/docs/QuickStart/) –
+Official docs for integrating Razor’s wallet connection toolkit.
+- [Razor Wallet](https://razorwallet.xyz/) – Download and learn more
+about the Razor wallet.
+
+# Interacting with Move Contracts Using the Aptos TypeScript SDK
+
+## Introduction
+Over the past few tutorials, we’ve focused on   writing Move contracts.
+Now, let’s explore how to interact with those   contracts using the
+Aptos TypeScript SDK. While we’re building on   the **Movement
+Network**, meaning you can leverage the Aptos   TypeScript SDK to
+communicate with the chain.
+
+This guide explains how to set up the SDK, configure it for
+Movement’s Bardock Testnet, and execute common operations such as
+reading on-chain data and submitting transactions. For more details
+on available functions, consult the specific SDK version’s reference
+documentation.
+
+---
+
+## Installation
+
+Choose one of your preferred package managers to install the SDK:
+
+```bash
+# npm
+npm install @aptos-labs/aptos-ts-sdk
+# pnpm
+pnpm add @aptos-labs/aptos-ts-sdk
+
+# yarn
+yarn add @aptos-labs/aptos-ts-sdk
+
+# bun
+bun add @aptos-labs/aptos-ts-sdk
+```
+
+---
+
+## Imports
+
+To begin, import the necessary components from the SDK:
+
+```js
+const {
+  Account,
+  Aptos,
+  AptosConfig,
+  Network,
+  Ed25519PrivateKey
+} = require("@aptos-labs/aptos-ts-sdk");
+```
+
+---
+
+## Configuration
+
+Set up the SDK to connect to **Movement’s Bardock Testnet** (or your
+preferred endpoint).
+
+```js
+const config = new AptosConfig({
+  network: Network.CUSTOM,
+  fullnode: "https://aptos.testnet.bardock.movementlabs.xyz/v1",
+  faucet: "https://faucet.testnet.bardock.movementnetwork.xyz/"
+});
+
+// Initialize the Aptos client
+const aptos = new Aptos(config);
+```
+> **Note**: Refer to the [Movement
+documentation](https://docs.movementnetwork.xyz/devs/networkEndpoints
+) for a list of available endpoints.
+
+---
+
+## Interacting with the Chain
+
+### 1. Account Setup
+
+Create or load an account using your private key:
+```js
+const privateKey = new Ed25519PrivateKey("YOUR_PRIVATE_KEY");
+const account = Account.fromPrivateKey({ privateKey });
+```
+
+Be sure to replace `"YOUR_PRIVATE_KEY"` with your actual private key.
+Never commit or share private keys publicly.
+
+---
+
+### 2. Reading Data
+
+Here’s an example of using a **view function** to read on-chain data:
+```js
+const viewPayload = {
+   function: "0x1::message::get_message",
+   functionArguments: [accountAddress]
+};
+
+const result = await aptos.view({ payload: viewPayload });
+console.log("On-chain message:", result);
+```
+
+---
+
+### 3. Sending Transactions
+
+#### Build and Submit a Transaction
+
+1. **Build** the transaction:
+   ```js
+   const transaction = await aptos.transaction.build.simple({
+     sender: accountAddress,
+     data: {
+             function: "0x1::message::set_message",
+             functionArguments: ["Hello Movement!"]
+        },
+      });
+      ```
+
+2. **Sign** it:
+   ```js
+   const signature = aptos.transaction.sign({
+     signer: account,
+     transaction
+   });
+   ```
+
+3. **Submit** the signed transaction:
+   ```js
+   const committedTxn = await aptos.transaction.submit.simple({
+     transaction,
+     senderAuthenticator: signature
+   });
+   ```
+
+4. **Wait** for completion:
+   ```js
+   const response = await aptos.waitForTransaction({
+     transactionHash: committedTxn.hash
+   });
+   console.log("Transaction response:", response);
+   ```
+
+> **Tip**: Always confirm the transaction is executed successfully
+before fetching new on-chain data.
+
+---
+
+## Example Code
+
+Below is a more comprehensive script based on the “Your First Move
+Contract” tutorial. It shows how to:
+
+-   Configure the SDK for Movement’s Porto Testnet
+-   Create an account from a private key
+-   Build and submit transactions
+-   Read on-chain data
+```js
+const {
+  Account,
+  Aptos,
+  AptosConfig,
+  Network,
+  Ed25519PrivateKey
+} = require("@aptos-labs/aptos-ts-sdk");
+
+// Define the custom network configuration
+const config = new AptosConfig({
+  network: Network.CUSTOM,
+  fullnode: "https://aptos.testnet.bardock.movementlabs.xyz/v1",
+  faucet: "https://faucet.testnet.bardock.movementnetwork.xyz/"
+});
+
+// Define the module address and functions
+const MODULE_ADDRESS = "";
+const SET_MESSAGE_FUNCTION =
+`${MODULE_ADDRESS}::message::set_message`;
+const GET_MESSAGE_FUNCTION =
+`${MODULE_ADDRESS}::message::get_message`;
+
+const PRIVATE_KEY = "YOUR_PRIVATE_KEY"; // Replace with your private
+key
+const MESSAGE = "gmove";
+
+const setMessage = async () => {
+  // Setup the client
+  const aptos = new Aptos(config);
+
+  // Create an account from the provided private key
+  const privateKey = new Ed25519PrivateKey(PRIVATE_KEY);
+  const account = Account.fromPrivateKey({ privateKey });
+  const accountAddress = account.accountAddress;
+
+  console.log(`Using account: ${accountAddress}`);
+
+  // Build the transaction payload
+  const payload = {
+     function: SET_MESSAGE_FUNCTION,
+     type_arguments: [],
+     arguments: [MESSAGE],
+  };
+     // Optionally, view the current message
+     const viewPayload = {
+        function: GET_MESSAGE_FUNCTION,
+        functionArguments: [accountAddress]
+     };
+     try {
+        const message = await aptos.view({ payload: viewPayload });
+        console.log("Existing message:", message);
+     } catch (error) {
+        console.error("Error reading existing message:", error);
+     }
+
+     // Build a transaction to set a new message
+     const transaction = await aptos.transaction.build.simple({
+       sender: accountAddress,
+       data: {
+          function: SET_MESSAGE_FUNCTION,
+          functionArguments: [MESSAGE]
+       },
+     });
+
+  // Sign the transaction
+  const signature = aptos.transaction.sign({ signer: account,
+transaction });
+
+     // Submit the transaction to chain
+     const committedTxn = await aptos.transaction.submit.simple({
+       transaction,
+       senderAuthenticator: signature,
+     });
+
+  console.log(`Submitted transaction: ${committedTxn.hash}`);
+  const response = await aptos.waitForTransaction({ transactionHash:
+committedTxn.hash });
+  console.log("Transaction response:", response);
+
+     // View the updated on-chain message
+     const newMessage = await aptos.view({ payload: viewPayload });
+     console.log("New message:", newMessage);
+};
+
+setMessage().catch((err) => {
+  console.error("Error setting message:", err);
+});
+```
+---
+
+## Conclusion
+
+You’ve now seen how to leverage the Aptos TypeScript SDK on the
+**Movement Network**. From account management and viewing on-chain
+data to building, signing, and submitting transactions—this guide
+should help you get started.
+
+For more detailed usage of the SDK, refer to the official SDK
+documentation or examples provided within Movement’s ecosystem.
+
+Happy building on **Movement**!
+
+# Building on Movement with Aptos Templates
+
+## Introduction
+Over the past tutorials, we've explored how to write Move contracts
+and interact with them using the Aptos TypeScript SDK. Now, let's
+streamline development even further by using **Aptos Templates** to
+quickly build decentralized applications (dApps) on the **Movement
+Network**.
+
+### Why Use Aptos Templates?
+Using **create-aptos-dapp**, developers can generate complete
+end-to-end dApp templates, including both the frontend and smart
+contract components, with minimal setup. This tool makes it easier to
+deploy smart contracts, interact with them from a frontend, and
+follow best development practices.
+
+### Benefits of Using Templates:
+- **Faster Development**: Pre-configured templates save time in
+setting up Move contracts and frontend integration.
+- **Best Practices**: Ensures you follow Aptos-recommended structures
+and design principles.
+- **Built-in Move Commands**: Simplifies initializing, compiling, and
+publishing contracts.
+- **Pre-styled UI Components**: Uses **shadcn/ui** and
+**TailwindCSS** for a professional look.
+- **Multiple dApp Types**: Choose from various templates suited for
+different blockchain use cases.
+
+---
+## Setting Up **create-aptos-dapp**
+
+### Prerequisites
+Ensure you have the following installed:
+- **Node.js** (npm ≥ 5.2.0)
+- **Python 3.6+**
+
+### Installation
+Navigate to your working directory and run:
+```bash
+npx create-aptos-dapp@latest
+```
+Follow the CLI prompts to configure your project:
+- Set a **project name**
+- Choose a **template**
+- Select between **Mainnet** or **Devnet** for testing
+
+---
+
+## Tools Used in These Templates
+Each template includes:
+- **React Framework** for frontend development
+- **Vite** for fast build times and development
+- **shadcn/ui + TailwindCSS** for styling
+- **Aptos TypeScript SDK** for blockchain interactions
+- **Aptos Wallet Adapter** for wallet connectivity
+- **Node-based Move Commands** for smart contract handling
+
+
+## Available Templates
+
+**create-aptos-dapp** offers multiple templates, each designed for a
+specific blockchain use case:
+
+### **Boilerplate Template**
+A simple starter dApp template with a structured project setup and
+basic wallet integration.
+
+### **NFT Minting Template**
+A complete **NFT minting dApp**, pre-configured with a UI, smart
+contract, and wallet integration for easy deployment.
+
+### **Token Minting Template**
+This template enables quick **fungible token creation** with a
+built-in UI and interaction tools.
+### **Token Staking Template**
+Provides a ready-made **token staking dApp** for projects that want
+to implement staking mechanisms.
+
+### **Telegram Mini dApp Template**
+A **mini dApp** optimized for Telegram, featuring a clicker game with
+blockchain interactions.
+
+### **Custom Indexer Template**
+This template includes a **custom blockchain indexer** to efficiently
+process on-chain data and display real-time insights.
+
+
+---
+
+## How to Use Templates
+### Selecting a Template
+Once **create-aptos-dapp** is installed, choose a template by
+running:
+```bash
+npx create-aptos-dapp@latest
+```
+After selection, navigate to your project folder:
+```bash
+cd my-project
+```
+Install dependencies:
+```bash
+npm install
+```
+Start the development server:
+```bash
+npm run dev
+```
+
+---
+
+## Customizing Templates
+### Modifying the Theme
+- Edit `tailwind.config.js` to modify theme colors and typography.
+- Update `frontend/index.css` to change light/dark mode styles.
+
+### Adding Components
+Run the following to add UI components using **shadcn-ui**:
+```bash
+npx shadcn-ui@latest add component_name
+```
+
+### Deploying Your dApp
+To publish your project to a live server, ensure your root route is
+correctly configured. If hosting on GitHub Pages:
+- Update the root route in `vite.config.ts`.
+
+---
+
+## Conclusion
+By leveraging **create-aptos-dapp**, developers can quickly scaffold
+dApps, integrate Move smart contracts, and follow best practices when
+building on the **Movement Network**. This tool simplifies the
+development process and reduces setup complexity, allowing you to
+focus on building innovative blockchain applications.
+
+## Reference
+https://aptos.dev/en/build/create-aptos-dapp
+
