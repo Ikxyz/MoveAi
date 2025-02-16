@@ -104,7 +104,7 @@ export async function POST(req: Request) {
       stream: true,
       messages: [template, ...messages],
     })
-    const stream = OpenAIStream(response)
+    const stream = OpenAIStream(response as any)
     return new StreamingTextResponse(stream)
   } catch (err) {
     throw err

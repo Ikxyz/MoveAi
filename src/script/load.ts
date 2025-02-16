@@ -5,6 +5,7 @@ import fsAsync from 'fs/promises'
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 import OpenAI from 'openai'
 import { URLS } from './output'
+
 type SimilarityMetric = 'dot_product' | 'cosine' | 'euclidean'
 
 const {
@@ -66,12 +67,12 @@ const getLastIndex = (): number => {
   }
 }
 
- const readData = async (filePath: string) => {
+const readData = async (filePath: string) => {
   try {
     const data = await fsAsync.readFile(filePath, 'utf-8')
     return data
   } catch (error) {
-   throw Error('Error reading file: ' + error)
+    throw Error('Error reading file: ' + error)
   }
 }
 

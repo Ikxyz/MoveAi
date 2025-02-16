@@ -10,8 +10,8 @@ import TextareaAutosize from 'react-textarea-autosize'
 import Markdown from 'react-markdown'
 import { Button } from '../../components/button';
 import remarkGfm from 'remark-gfm'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { get } from 'http'
 
 
@@ -139,7 +139,7 @@ export default function Chat() {
         <ul className="flex flex-col mt-10 w-full space-y-2.5 p-4">
           <p>Chat History</p>
           {history.map((item, index) => (
-            <li key={index} className="cursor-pointer text-center   w-full bg-gray-800 p-2 rounded-lg" onClick={()=>loadSession(item.id)}>{item.title}</li>
+            <li key={index} className="cursor-pointer text-center   w-full bg-gray-800 p-2 rounded-lg" onClick={() => loadSession(item.id)}>{item.title}</li>
           ))}
         </ul>
       </div>
@@ -158,7 +158,7 @@ export default function Chat() {
                     const match = /language-(\w+)/.exec(className || '')
                     return match ? (
                       <SyntaxHighlighter
-                        {...rest}
+                        {...rest as any}
                         PreTag="div"
 
                         language={match[1]}
