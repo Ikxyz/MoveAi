@@ -1,4 +1,4 @@
-# NFT Minting Module - Move Language
+export const NFT_TEMPLATE: string = `# NFT Minting Module - Move Language
 
 ## Description
 This Move module enables the creation and minting of NFTs (Non-Fungible Tokens) on the Movement blockchain. It includes:
@@ -9,7 +9,7 @@ This Move module enables the creation and minting of NFTs (Non-Fungible Tokens) 
 
 ## Source Code
 
-```move
+\`\`\`move
 module mint_nft::create_nft {
     use std::bcs;
     use std::error;
@@ -80,37 +80,38 @@ module mint_nft::create_nft {
         );
     }
 }
-```
+\`\`\`
 
 ## Deployment Process
 
 ### 1. Install Dependencies
 Ensure you have the Movement CLI installed.
 
-```sh
+\`\`\`sh
 cargo install --git https://github.com/move-language/move move-cli --branch main
-```
+\`\`\`
 
 ### 2. Compile the Module
 Navigate to your Move package folder and compile the module:
 
-```sh
+\`\`\`sh
 movement move compile --named-addresses mint_nft=0xYourAccount
-```
+\`\`\`
 
 ### 3. Publish to Blockchain
 Deploy the compiled module to the Movement blockchain:
 
-```sh
+\`\`\`sh
 movement move compile  --named-addresses mint_nft=0xYourAccount
-```
+\`\`\`
 
-> Replace `0xYourAccount` with your actual Movement account address. You can find it in `~/.movement/config.yaml`.
+> Replace \`0xYourAccount\` with your actual Movement account address. You can find it in \`~/.movement/config.yaml\`.
 
 ## Usage
 
 ### Initialize the Module
-Call `init_module()` to create the NFT collection and initialize the contract.
+Call \`init_module()\` to create the NFT collection and initialize the contract.
 
 ### Mint an NFT
-Call `delayed_mint_event_ticket(module_owner, receiver)` to mint an NFT to the specified receiver.
+Call \`delayed_mint_event_ticket(module_owner, receiver)\` to mint an NFT to the specified receiver.
+`

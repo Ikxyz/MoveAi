@@ -5,7 +5,7 @@ import { getTemplate } from '../templates/template'
 
 export const maxDuration = 30 // Allow streaming responses up to 30 seconds
 
-const template = await getTemplate()
+const template = getTemplate()
 
 const getContent = (context: string, question: string) => `
   'You are an AI assistant who knows everything about Movement Blockchain and other web3 crypto technologies called MoveAi.

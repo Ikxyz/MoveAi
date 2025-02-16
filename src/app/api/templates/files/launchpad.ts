@@ -1,4 +1,4 @@
-# Launchpad Module
+export const LaunchPad = `# Launchpad Module
 
 This repository contains the source code for the **Launchpad Module** built on Movement using Move.
 
@@ -14,7 +14,7 @@ The Launchpad Module allows users to create fungible assets (FAs) with various c
 
 ## Source Code
 
-```move
+\`\`\`move
 module launchpad_addr::launchpad {
     use std::option::{Self, Option};
     use std::signer;
@@ -114,7 +114,7 @@ module launchpad_addr::launchpad {
     }
 
     /// If you deploy the module under an object, sender is the object's signer
-    /// If you deploy the moduelr under your own account, sender is your account's signer
+    /// If you deploy the module under your own account, sender is your account's signer
     fun init_module(sender: &signer) {
         move_to(sender, Registry {
             fa_objects: vector::empty()
@@ -366,7 +366,7 @@ module launchpad_addr::launchpad {
         }
     }
 
-    /// ACtual implementation of minting FA
+    /// Actual implementation of minting FA
     fun mint_fa_internal(
         sender: &signer,
         fa_obj: Object<Metadata>,
@@ -398,7 +398,7 @@ module launchpad_addr::launchpad {
         }
     }
 
-    // ================================= Uint Tests ================================== //
+    // ================================= Unit Tests ================================== //
 
     #[test_only]
     use aptos_framework::aptos_coin;
@@ -419,7 +419,6 @@ module launchpad_addr::launchpad {
         init_module(sender);
 
         // create first FA
-
         create_fa(
             sender,
             option::some(1000),
@@ -441,7 +440,6 @@ module launchpad_addr::launchpad {
         assert!(primary_fungible_store::balance(sender_addr, fa_1) == 20, 3);
 
         // create second FA
-
         create_fa(
             sender,
             option::some(1000),
@@ -470,7 +468,7 @@ module launchpad_addr::launchpad {
         coin::destroy_mint_cap(mint_cap);
     }
 }
-```
+\`\`\`
 
 ## Compilation and Deployment
 
@@ -479,25 +477,26 @@ Ensure you have the following installed:
 - Movement CLI
 
 1. **Compile the Move module:**
-   ```sh
-   movement move compile --package-dir .
-   ```
+\`\`\`
+movement move compile --package-dir .
+\`\`\`
 
 2. **Publish the module to Aptos blockchain:**
-   ```sh
-   movement move publish --package-dir . --profile default
-   ```
+\`\`\`
+movement move publish --package-dir . --profile default
+\`\`\`
 
 3. **Verify deployment:**
-   ```sh
-   movement move run --function launchpad_addr::launchpad::init_module --profile default
-   ```
+\`\`\`
+movement move run --function launchpad_addr::launchpad::init_module --profile default
+\`\`\`
 
 ## Usage
 
 After deployment, you can interact with the module using Movement CLI or a custom frontend integration. The main functions available are:
 
-- **`set_pending_admin`**: Assign a new admin.
-- **`accept_admin`**: Accept admin role.
-- **`update_mint_fee_collector`**: Change the mint fee collector.
-- **`create_fa`**: Create a new fungible asset.
+- **\`set_pending_admin\`**: Assign a new admin.
+- **\`accept_admin\`**: Accept admin role.
+- **\`update_mint_fee_collector\`**: Change the mint fee collector.
+- **\`create_fa\`**: Create a new fungible asset.
+`;

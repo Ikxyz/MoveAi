@@ -1,4 +1,8 @@
 import fsAsync from 'fs/promises'
+import { LaunchPad } from './files/launchpad'
+import { NFT_TEMPLATE } from './files/nft'
+import { SimpleToken } from './files/simple_token'
+import { TodoList } from './files/todo_list'
 
 export type TEMPLATE = {
   name: string
@@ -8,47 +12,39 @@ export type TEMPLATE = {
   content: string
 }
 
-const NFT = async (): Promise<TEMPLATE> => ({
+const NFT = {
   name: 'NFT',
   title: 'NFT Minting Module - Move Language',
   image: '/contract/nft.png',
   desc: 'This Move module enables the creation and minting of NFTs (Non-Fungible Tokens) on the Movement blockchain.',
-  content: await readData(
-    process.cwd() + '/src/app/api/templates/files/nft.txt',
-  ),
-})
+  content: NFT_TEMPLATE,
+}
 
-const LUNCH_PAD = async (): Promise<TEMPLATE> => ({
+const LUNCH_PAD = {
   name: 'Launch Pad',
   title: 'Launchpad Module built on Movement using Move',
 
   desc: 'The Launchpad Module allows users to create fungible assets (FAs) with various configurations such as max supply, mint limits, and fees. It includes functionalities for admin control, FA creation, and minting events.',
   image: '/contract/launchPad.png',
-  content: await readData(
-    process.cwd() + '/src/app/api/templates/files/launchpad.txt',
-  ),
-})
+  content: LaunchPad,
+}
 
-const SIMPLE_TOKEN = async (): Promise<TEMPLATE> => ({
+const SIMPLE_TOKEN = {
   name: 'Simple Token',
   title: 'Creating a Token on Movement Blockchain',
   desc: 'This guide explains how to create and deploy a token on the Movement blockchain using the Move programming language.',
   image: '/contract/simple_token.png',
-  content: await readData(
-    process.cwd() + '/src/app/api/templates/files/simple_token.txt',
-  ),
-})
+  content: SimpleToken,
+}
 
-const TODO_LIST = async (): Promise<TEMPLATE> => ({
+const TODO_LIST = {
   name: 'Todo List',
   title: 'Advanced Todo List on Movement Blockchain',
   desc: 'This project implements an advanced todo list using the Move programming language. It allows users to create todo lists, add todos, mark them as complete, and retrieve their lists.',
 
   image: '/contract/todoList.png',
-  content: await readData(
-    process.cwd() + '/src/app/api/templates/files/todo_list.txt',
-  ),
-})
+  content: TodoList,
+}
 
 export const readData = async (filePath: string) => {
   try {
@@ -60,13 +56,6 @@ export const readData = async (filePath: string) => {
   }
 }
 
-export const getTemplate = async () => {
-  const [nft, lunchPad, simpleToken, todoList] = await Promise.all([
-    SIMPLE_TOKEN(),
-    NFT(),
-    LUNCH_PAD(),
-    TODO_LIST(),
-  ])
-
-  return [simpleToken, nft, lunchPad, todoList]
+export const getTemplate = () => {
+  return [SIMPLE_TOKEN, NFT, LUNCH_PAD, TODO_LIST]
 }

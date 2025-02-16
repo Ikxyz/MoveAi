@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build; npm run postbuild",
-    "postbuild": "cp  -Rfv src/app/api/templates/files .next/server/app/api/templates/",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "typegen": "sanity schema extract --path=src/sanity/extract.json && sanity typegen generate && rm ./src/sanity/extract.json"

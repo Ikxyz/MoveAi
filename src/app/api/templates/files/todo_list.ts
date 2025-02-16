@@ -1,11 +1,11 @@
-# Advanced Todo List on Move
+export const TodoList = `# Advanced Todo List on Move
 
 ## Overview
 This project implements an advanced todo list using the Move programming language. It allows users to create todo lists, add todos, mark them as complete, and retrieve their lists.
 
 ## Source Code
 
-```
+\`\`\`
     module advanced_todo_list_addr::advanced_todo_list {
     use std::bcs;
     use std::signer;
@@ -283,29 +283,29 @@ This project implements an advanced todo list using the Move programming languag
         complete_todo(&admin, todo_list_idx, 0);
     }
 }
-```
+\`\`\`
 
 ## Deployment Instructions
 
 1. Install the Movement CLI and set up your environment.
 2. Initialize your Move package:
-   ```sh
+   \`\`\`sh
    movement move init
-   ```
+   \`\`\`
 3. Compile the Move module:
-   ```sh
+   \`\`\`sh
    movement move compile
-   ```
+   \`\`\`
 4. Publish the module to the Movement blockchain:
-   ```sh
+   \`\`\`sh
    movement move publish --package-path . --named-addresses advanced_todo_list_addr=<your_address>
-   ```
+   \`\`\`
 5. Interact with the module using Movement CLI or a frontend dApp.
 
 ## Usage
 
-- Call `create_todo_list` to initialize a todo list.
-- Call `create_todo` to add a new task.
-- Call `complete_todo` to mark a task as completed.
+- Call \`create_todo_list\` to initialize a todo list.
+- Call \`create_todo\` to add a new task.
+- Call \`complete_todo\` to mark a task as completed.
 - Use the read functions to fetch user todo lists and tasks.
-
+`;

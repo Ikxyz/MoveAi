@@ -1,11 +1,11 @@
-# Creating a Token on Movement
+export const SimpleToken = `# Creating a Token on Movement
 
 ## Overview
 This guide explains how to create and deploy a token on the Movement blockchain using the Move programming language.
 
 ## Source Code
 
-```move
+\`\`\`move
 module coin {
     use std::signer;
     use std::string;
@@ -75,29 +75,28 @@ module coin {
         coin::burn<Coin>(coins, burn_cap);
     }
 }
-```
+\`\`\`
 
 ## Deployment Instructions
 
 1. Compile the Move module:
-   ```sh
+   \`\`\`sh
    movement move compile
-   ```
+   \`\`\`
 2. Publish the module to the Movement blockchain:
-   ```sh
+   \`\`\`sh
    movement move publish
-   ```
+   \`\`\`
 3. Deploy and initialize your token:
-   ```sh
-   movement move run --function-id <your-account-address>::<your-module-name>::initialize_token \
+   \`\`\`sh
+   movement move run --function-id <your-account-address>::<your-module-name>::initialize_token \\
      --args string:"YourTokenName" string:"YTN" u8:8 u64:
-   ```
+   \`\`\`
 
 ## Usage
 
-- Call `initialize` to set up the token.
-- Call `mint` to mint new tokens to an address.
-- Call `register` to register an account to hold the token.
-- Call `burn` to remove tokens from circulation.
-
-
+- Call \`initialize\` to set up the token.
+- Call \`mint\` to mint new tokens to an address.
+- Call \`register\` to register an account to hold the token.
+- Call \`burn\` to remove tokens from circulation.
+`;
