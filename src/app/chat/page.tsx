@@ -97,7 +97,7 @@ export default function Chat() {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (!account.address) return connectWallet();
+    if (!account?.address) return connectWallet();
 
     if (input.trim()) {
       setIsTyping(true)
