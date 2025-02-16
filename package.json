@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build; npm run postbuild",
     "postbuild": "cp  -Rfv src/app/api/templates/files .next/server/app/api/templates/",
     "start": "next start",
     "lint": "next lint",
