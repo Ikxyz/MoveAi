@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "cp  -Rfv src/app/api/templates/files .next/server/app/api/templates/",
     "start": "next start",
     "lint": "next lint",
     "typegen": "sanity schema extract --path=src/sanity/extract.json && sanity typegen generate && rm ./src/sanity/extract.json"

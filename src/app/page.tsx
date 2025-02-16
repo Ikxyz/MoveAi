@@ -37,7 +37,7 @@ function Hero() {
         <Navbar
           banner={
             <Link
-              href="/blog/MoveAi-raises-100m-series-a-from-tailwind-ventures"
+              href="#"
               className="flex items-center gap-1 rounded-full bg-fuchsia-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-fuchsia-950/30"
             >
               AI-Powered Smart Contract Generator & Analysis.
